@@ -88,6 +88,7 @@ Use $punk-cover to create prompt-only output for this X cover, style 黑白灰�
 | 法式极简墨线海报 | `french-minimal-ink-poster` | AI、关系、制度、选择和抽象观点的手绘墨线隐喻封面 |
 | 品牌协同连接 | `brand-collaboration-connection` | 品牌联动、工具集成、自动化工作流、产品教程和企业级连接封面 |
 | Anthropic Research 风格 | `anthropic-research-style` | AI、研究、知识、系统和设计主题的极简编辑封面 |
+| kimi风格 | `kimi-stlye` | AI、研究、产品、材料和创意项目的俯视档案桌封面 |
 
 ### 风格样例
 
@@ -107,8 +108,8 @@ Use $punk-cover to create prompt-only output for this X cover, style 黑白灰�
 | 黑色复古现代主义封面 | 银色锡纸蓝字 | 彩色新构成主义巨构海报 |
 | ![复古日本科幻动画](./screenshots/punk-cover-styles/retro-japanese-sci-fi-anime-cover.png) | ![法式极简墨线海报](./screenshots/punk-cover-styles/french-minimal-ink-poster.png) | ![品牌协同连接](./screenshots/punk-cover-styles/brand-collaboration-connection.png) |
 | 复古日本科幻动画 | 法式极简墨线海报 | 品牌协同连接 |
-| ![Anthropic Research 风格](./screenshots/punk-cover-styles/anthropic-research-style.png) | | |
-| Anthropic Research 风格 | | |
+| ![Anthropic Research 风格](./screenshots/punk-cover-styles/anthropic-research-style.png) | ![kimi风格](./screenshots/punk-cover-styles/kimi-stlye.png) | |
+| Anthropic Research 风格 | kimi风格 | |
 
 ## punk-avatar
 

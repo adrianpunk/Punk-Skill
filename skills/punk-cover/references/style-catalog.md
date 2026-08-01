@@ -28,6 +28,7 @@ Do not copy prompt bodies into this catalog. Read the selected style's `META.md`
 | 法式极简墨线海报 | `french-minimal-ink-poster` | `styles/french-minimal-ink-poster/META.md` | `styles/french-minimal-ink-poster/STYLE.md` | Quiet editorial essays, AI and technology themes, relationships, social systems, and abstract ideas needing a sparse ink metaphor. |
 | 品牌协同连接 | `brand-collaboration-connection` | `styles/brand-collaboration-connection/META.md` | `styles/brand-collaboration-connection/STYLE.md` | Brand collaboration, tool integration, workflow automation, product tutorial, and enterprise partnership covers needing two-logo connection visuals. |
 | Anthropic Research 风格 | `anthropic-research-style` | `styles/anthropic-research-style/META.md` | `styles/anthropic-research-style/STYLE.md` | AI, research, knowledge, systems, and design topics needing a quiet editorial cover with a flat color field, serif title, and one abstract line metaphor. |
+| kimi风格 | `kimi-stlye` | `styles/kimi-stlye/META.md` | `styles/kimi-stlye/STYLE.md` | AI, research, products, materials, systems, and creative projects needing a top-down archival still life on a pale gray-green light table. |
 
 ## Non-Cover Style Atoms
 
@@ -50,6 +51,7 @@ These reusable style atoms exist in `styles/`, but are not part of the default `
 - For tutorials, product launches, workflow automation, tool integrations, brand collaborations, or two-logo partnership covers, prefer `品牌协同连接`.
 - For research-heavy material, prefer `科研期刊概念`.
 - For AI research, knowledge systems, design research, or quiet report-like editorial covers, prefer `Anthropic Research 风格`.
+- For project archives, research desks, material studies, product concepts, or object-based visual metaphors, prefer `kimi风格`.
 - For a single abstract term, prefer `语义转译极简`, `复古油墨点阵隐喻`, `黑白极简概念`, or `法式极简墨线海报`.
 - For architecture, landmarks, cities, travel posters, or place-focused essays, prefer `先锋复古建筑海报`.
 - For events, sports, launches, city-scale topics, or covers needing maximum first-glance impact, prefer `彩色新构成主义巨构海报`.
