@@ -37,7 +37,7 @@ if (!failures.length) {
   for (const phrase of [
     "compile that style atom into the avatar shape",
     "references/avatar-prompt-blueprint.md",
-    "Do not append the raw style prompt as a standalone second section",
+    "Do not append the raw `STYLE.md` content as a standalone second section",
     "Default ratio is always `1:1` inside `punk-avatar`",
   ]) {
     if (!skill.includes(phrase)) {
@@ -63,14 +63,14 @@ if (!failures.length) {
 
   for (const styleId of allowedStyleIds) {
     const stylePath = path.join(root, "styles", styleId, "STYLE.md");
-    const promptPath = path.join(root, "styles", styleId, "PROMPT.md");
+    const promptPath = path.join(root, "styles", styleId, "STYLE.md");
 
     if (!fs.existsSync(stylePath)) {
       fail(`Missing style metadata: ${path.relative(root, stylePath)}`);
     }
 
     if (!fs.existsSync(promptPath)) {
-      fail(`Missing style prompt: ${path.relative(root, promptPath)}`);
+      fail(`Missing style file: ${path.relative(root, promptPath)}`);
     }
   }
 

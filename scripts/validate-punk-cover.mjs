@@ -24,7 +24,7 @@ function fail(message) {
 }
 
 function fencedYaml(markdown) {
-  const match = markdown.match(/```yaml\n([\s\S]*?)\n```/);
+  const match = markdown.match(/```yaml\r?\n([\s\S]*?)\r?\n```/);
   return match ? match[1] : "";
 }
 
