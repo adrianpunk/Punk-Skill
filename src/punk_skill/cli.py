@@ -5,7 +5,11 @@ import json
 import sys
 from pathlib import Path
 
+import yaml
+
+from .compiler import compile_prompt
 from .errors import PunkError
+from .models import GenerationJob
 from .repository import PunkRepository
 from .validator import error_count, validate_repository
 
@@ -54,6 +58,42 @@ def command_manifest(args: argparse.Namespace) -> int:
     return 0
 
 
+def _read_job(path: Path | None, use_stdin: bool) -> GenerationJob:
+    if use_stdin:
+        text = sys.stdin.read()
+    elif path:
+        text = path.read_text(encoding="utf-8")
+    else:
+        raise PunkError("provide a job file or --stdin")
+    try:
+        payload = yaml.safe_load(text)
+    except yaml.YAMLError as error:
+        raise PunkError(f"job file is not valid YAML or JSON: {error}") from error
+    return GenerationJob.from_mapping(payload)
+
+
+def command_prompt(args: argparse.Namespace) -> int:
+    job = _read_job(args.job, args.stdin)
+    result = compile_prompt(_repository(args), job)
+    output = args.output
+    if not output and job.output_dir:
+        output = Path(job.output_dir) / "prompts" / f"{job.mode}.md"
+    if output:
+        output = output.expanduser().resolve()
+        output.parent.mkdir(parents=True, exist_ok=True)
+        output.write_text(result.prompt, encoding="utf-8")
+    if args.json:
+        payload = result.to_mapping()
+        if output:
+            payload["prompt_path"] = str(output)
+        print(json.dumps(payload, ensure_ascii=False, indent=2))
+    elif output:
+        print(output)
+    else:
+        print(result.prompt, end="")
+    return 0
+
+
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(prog="punk", description="Local runtime for Punk visual styles")
     parser.add_argument("--root", type=Path, help="Punk-Skill repository root")
@@ -72,6 +112,13 @@ def build_parser() -> argparse.ArgumentParser:
     manifest.add_argument("--mode", choices=("cover", "avatar"))
     manifest.add_argument("--output", type=Path)
     manifest.set_defaults(handler=command_manifest)
+
+    prompt = subparsers.add_parser("prompt", help="compile one structured job into an image prompt")
+    prompt.add_argument("job", nargs="?", type=Path)
+    prompt.add_argument("--stdin", action="store_true", help="read YAML or JSON job data from stdin")
+    prompt.add_argument("--output", type=Path)
+    prompt.add_argument("--json", action="store_true")
+    prompt.set_defaults(handler=command_prompt)
     return parser
 
 
@@ -87,4 +134,3 @@ def main(argv: list[str] | None = None) -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
-
