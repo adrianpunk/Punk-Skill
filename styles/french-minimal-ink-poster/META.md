@@ -25,7 +25,7 @@ must_preserve:
   - one core metaphor, one main visual center, one readable main title
   - quiet French minimal editorial mood
   - hand-drawn ink texture, incomplete contours, and restrained paper warmth
-  - sparse text: one title and at most 1-2 short subtitle lines
+  - "sparse text: one title and at most 1-2 short subtitle lines"
   - technology themes must include a subtle but clear digital trace without becoming tech UI
 avoid_when_applying_to_cover:
   - using the topic noun directly as a generic icon
