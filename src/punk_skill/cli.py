@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import argparse
+import getpass
 import json
 import sys
 from pathlib import Path
@@ -10,7 +11,9 @@ import yaml
 from .compiler import compile_prompt
 from .errors import PunkError
 from .models import GenerationJob
+from .providers.apimart import APIMartConfig, APIMartProvider, save_keychain_key
 from .repository import PunkRepository
+from .storage import prepare_output, save_result
 from .validator import error_count, validate_repository
 
 
@@ -94,6 +97,43 @@ def command_prompt(args: argparse.Namespace) -> int:
     return 0
 
 
+def command_generate(args: argparse.Namespace) -> int:
+    job = _read_job(args.job, args.stdin)
+    result = compile_prompt(_repository(args), job)
+    output_dir = args.output_dir or (Path(job.output_dir) if job.output_dir else None)
+    if not output_dir:
+        raise PunkError("generate requires --output-dir or output_dir in the job")
+    root, prompt_path = prepare_output(result, output_dir)
+    if job.provider != "apimart":
+        raise PunkError(f"unsupported provider: {job.provider}")
+    provider = APIMartProvider(APIMartConfig.from_environment())
+    image = provider.generate(
+        prompt=result.prompt,
+        ratio=result.job.ratio,
+        output_stem=root / result.job.mode,
+        source_image=result.job.source_image,
+    )
+    result_path = save_result(root, image)
+    payload = {
+        "status": "generated",
+        "prompt_path": str(prompt_path),
+        "result_path": str(result_path),
+        **image.to_mapping(),
+    }
+    if args.json:
+        print(json.dumps(payload, ensure_ascii=False, indent=2))
+    else:
+        print(image.saved_path)
+    return 0
+
+
+def command_config_set_key(args: argparse.Namespace) -> int:
+    value = getpass.getpass("APIMart API key: ")
+    save_keychain_key(value)
+    print("APIMart API key saved in macOS Keychain.")
+    return 0
+
+
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(prog="punk", description="Local runtime for Punk visual styles")
     parser.add_argument("--root", type=Path, help="Punk-Skill repository root")
@@ -119,6 +159,18 @@ def build_parser() -> argparse.ArgumentParser:
     prompt.add_argument("--output", type=Path)
     prompt.add_argument("--json", action="store_true")
     prompt.set_defaults(handler=command_prompt)
+
+    generate = subparsers.add_parser("generate", help="compile a job and generate one image")
+    generate.add_argument("job", nargs="?", type=Path)
+    generate.add_argument("--stdin", action="store_true", help="read YAML or JSON job data from stdin")
+    generate.add_argument("--output-dir", type=Path)
+    generate.add_argument("--json", action="store_true")
+    generate.set_defaults(handler=command_generate)
+
+    config = subparsers.add_parser("config", help="manage local provider configuration")
+    config_subparsers = config.add_subparsers(dest="config_command", required=True)
+    set_key = config_subparsers.add_parser("set-key", help="save the APIMart API key in macOS Keychain")
+    set_key.set_defaults(handler=command_config_set_key)
     return parser
 
 
