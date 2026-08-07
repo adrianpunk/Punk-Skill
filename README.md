@@ -7,7 +7,7 @@ Punk Skill 是一组给 AI Agent 使用的视觉生成 Skills。安装后，可�
 把下面这段话发给支持 Skills 的 AI Agent：
 
 ```text
-请安装这个仓库里的全部 Skills：https://github.com/adrianpunk/Punk-Skill
+请安装这个仓库里的全部 Skills：https://github.com/ozrwayne/Punk-Skill
 ```
 
 安装后可以这样调用：
@@ -15,6 +15,50 @@ Punk Skill 是一组给 AI Agent 使用的视觉生成 Skills。安装后，可�
 ```text
 Use $punk-cover ...
 Use $punk-avatar ...
+```
+
+## Python 本地工具
+
+安装本地命令：
+
+```sh
+python3 -m venv .venv
+.venv/bin/pip install -e .
+```
+
+检查风格库：
+
+```sh
+punk validate
+punk styles --mode cover
+```
+
+任务文件示例：
+
+```yaml
+mode: cover
+style_id: anthropic-research-style
+title: AI Agent 正在改变内容生产方式
+platform: 微信公众号
+ratio: "2.35:1"
+provider: apimart
+output_dir: ./punk-assets/example
+```
+
+编译提示词或生成图片：
+
+```sh
+punk prompt job.yaml
+punk config set-key
+punk generate job.yaml
+```
+
+`punk config set-key` 把 APIMart API Key 写入 macOS Keychain。也可以使用环境变量 `PUNK_APIMART_API_KEY`。密钥不会写入任务文件和生成结果。
+
+同步到星际留白工程：
+
+```sh
+punk export-xingji /path/to/xingji-liubai
 ```
 
 ## 可用 Skills

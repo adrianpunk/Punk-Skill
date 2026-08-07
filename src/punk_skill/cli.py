@@ -6,10 +6,14 @@ import json
 import sys
 from pathlib import Path
 
-import yaml
+try:
+    import yaml
+except ImportError:
+    yaml = None
 
 from .compiler import compile_prompt
 from .errors import PunkError
+from .exporter import export_xingji
 from .models import GenerationJob
 from .providers.apimart import APIMartConfig, APIMartProvider, save_keychain_key
 from .repository import PunkRepository
@@ -69,9 +73,14 @@ def _read_job(path: Path | None, use_stdin: bool) -> GenerationJob:
     else:
         raise PunkError("provide a job file or --stdin")
     try:
-        payload = yaml.safe_load(text)
-    except yaml.YAMLError as error:
-        raise PunkError(f"job file is not valid YAML or JSON: {error}") from error
+        payload = json.loads(text)
+    except json.JSONDecodeError:
+        if yaml is None:
+            raise PunkError("job input must be JSON because PyYAML is not installed")
+        try:
+            payload = yaml.safe_load(text)
+        except yaml.YAMLError as error:
+            raise PunkError(f"job file is not valid YAML or JSON: {error}") from error
     return GenerationJob.from_mapping(payload)
 
 
@@ -134,6 +143,12 @@ def command_config_set_key(args: argparse.Namespace) -> int:
     return 0
 
 
+def command_export_xingji(args: argparse.Namespace) -> int:
+    payload = export_xingji(_repository(args), args.target)
+    print(json.dumps(payload, ensure_ascii=False, indent=2) if args.json else payload["runtime"])
+    return 0
+
+
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(prog="punk", description="Local runtime for Punk visual styles")
     parser.add_argument("--root", type=Path, help="Punk-Skill repository root")
@@ -171,6 +186,11 @@ def build_parser() -> argparse.ArgumentParser:
     config_subparsers = config.add_subparsers(dest="config_command", required=True)
     set_key = config_subparsers.add_parser("set-key", help="save the APIMart API key in macOS Keychain")
     set_key.set_defaults(handler=command_config_set_key)
+
+    export = subparsers.add_parser("export-xingji", help="export the Python runtime and style library to Xingji Liubai")
+    export.add_argument("target", type=Path, help="Xingji Liubai project root")
+    export.add_argument("--json", action="store_true")
+    export.set_defaults(handler=command_export_xingji)
     return parser
 
 

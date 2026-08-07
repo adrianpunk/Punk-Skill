@@ -97,6 +97,30 @@ class StyleMeta:
             result["preview"] = preview
         return result
 
+    def to_mapping(self) -> dict[str, Any]:
+        result: dict[str, Any] = {
+            "id": self.id,
+            "name": self.name,
+            "input_modes": list(self.input_modes),
+            "subjects": list(self.subjects),
+            "outputs": list(self.outputs),
+            "default_ratio": self.default_ratio,
+            "required_fields": list(self.required_fields),
+            "optional_fields": list(self.optional_fields),
+            "source": list(self.source) if len(self.source) > 1 else self.source[0],
+        }
+        for key in (
+            "style_anchors",
+            "cover_shape_adaptation",
+            "must_preserve",
+            "avoid_when_applying_to_cover",
+        ):
+            values = getattr(self, key)
+            if values:
+                result[key] = list(values)
+        result.update(self.extra)
+        return result
+
 
 @dataclass(frozen=True)
 class StyleRecord:

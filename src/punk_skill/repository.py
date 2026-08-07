@@ -5,7 +5,10 @@ import re
 from pathlib import Path
 from typing import Any, Iterable
 
-import yaml
+try:
+    import yaml
+except ImportError:  # Bundled desktop runtime uses generated META.json files.
+    yaml = None
 
 from .errors import PunkValidationError
 from .models import StyleMeta, StyleRecord
@@ -31,19 +34,28 @@ class PunkRepository:
     def load_style(self, style_id: str) -> StyleRecord:
         directory = self.styles_dir / style_id
         meta_path = directory / "META.md"
+        meta_json_path = directory / "META.json"
         style_path = directory / "STYLE.md"
         if not meta_path.is_file():
             raise PunkValidationError(f"missing metadata: {meta_path.relative_to(self.root)}")
         if not style_path.is_file():
             raise PunkValidationError(f"missing style file: {style_path.relative_to(self.root)}")
         meta_markdown = meta_path.read_text(encoding="utf-8")
-        match = YAML_BLOCK.search(meta_markdown)
-        if not match:
-            raise PunkValidationError(f"missing fenced yaml: {meta_path.relative_to(self.root)}")
-        try:
-            data = yaml.safe_load(match.group("body"))
-        except yaml.YAMLError as error:
-            raise PunkValidationError(f"invalid yaml in {meta_path.relative_to(self.root)}: {error}") from error
+        if meta_json_path.is_file():
+            try:
+                data = json.loads(meta_json_path.read_text(encoding="utf-8"))
+            except json.JSONDecodeError as error:
+                raise PunkValidationError(f"invalid json in {meta_json_path.relative_to(self.root)}: {error}") from error
+        else:
+            match = YAML_BLOCK.search(meta_markdown)
+            if not match:
+                raise PunkValidationError(f"missing fenced yaml: {meta_path.relative_to(self.root)}")
+            if yaml is None:
+                raise PunkValidationError("PyYAML is required when generated META.json files are absent")
+            try:
+                data = yaml.safe_load(match.group("body"))
+            except yaml.YAMLError as error:
+                raise PunkValidationError(f"invalid yaml in {meta_path.relative_to(self.root)}: {error}") from error
         if not isinstance(data, dict):
             raise PunkValidationError(f"metadata must be a mapping: {meta_path.relative_to(self.root)}")
         meta = StyleMeta.from_mapping(data)
@@ -99,4 +111,3 @@ def unresolved_placeholders(text: str) -> list[str]:
 
 def unique(values: Iterable[str]) -> list[str]:
     return list(dict.fromkeys(values))
-
