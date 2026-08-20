@@ -15,6 +15,7 @@ Do not copy prompt bodies into this catalog. Read the selected style's `META.md`
 | 咨询报告视觉 | `consulting-report-visual` | `styles/consulting-report-visual/META.md` | `styles/consulting-report-visual/STYLE.md` | Business strategy, frameworks, operations, product thinking, consulting reports, and structured analysis. |
 | 科研期刊概念 | `research-journal-concept` | `styles/research-journal-concept/META.md` | `styles/research-journal-concept/STYLE.md` | Science, research, medicine, materials, mechanisms, academic or lab-themed covers. |
 | 复古弥散渐变 | `retro-diffuse-gradient` | `styles/retro-diffuse-gradient/META.md` | `styles/retro-diffuse-gradient/STYLE.md` | Art, design, music, brand, emotion, atmospheric essays, independent magazine-style covers. |
+| 复古时代错位编辑封面 | `midcentury-surreal-editorial-cover` | `styles/midcentury-surreal-editorial-cover/META.md` | `styles/midcentury-surreal-editorial-cover/STYLE.md` | AI, coding, digital work, future tools, and contemporary topics needing mid-century commercial illustration, one human action, and a restrained surreal era mismatch. |
 | 极简公共空间摄影 | `minimal-public-space-photography` | `styles/minimal-public-space-photography/META.md` | `styles/minimal-public-space-photography/STYLE.md` | Opinion essays, long-form articles, cultural observation, spatial order, individual-space metaphors, and restrained editorial photography covers. |
 | 商业杂志头版 | `business-magazine-front-page` | `styles/business-magazine-front-page/META.md` | `styles/business-magazine-front-page/STYLE.md` | Business, technology, AI, startups, investment, trend analysis, sharp magazine-like editorial covers. |
 | 黑白灰先锋几何 | `black-white-gray-avant-geometry` | `styles/black-white-gray-avant-geometry/META.md` | `styles/black-white-gray-avant-geometry/STYLE.md` | Experimental, stark, geometric, modernist, poster-like covers with restrained color. |
@@ -49,6 +50,7 @@ These reusable style atoms exist in `styles/`, but are not part of the default `
 - For WeChat public account explainers, prefer `商业杂志头版`, `黑红剪影`, `咨询报告视觉`, `黑白极简概念`, `复古油墨点阵隐喻`, `极简公共空间摄影`, `复古弥散渐变`, `黑色复古现代主义封面`, or `法式极简墨线海报`.
 - For X covers, prefer `商业杂志头版`, `黑红剪影`, `黑白极简概念`, `复古油墨点阵隐喻`, `银色锡纸蓝字`, `黑白灰先锋几何`, `极简公共空间摄影`, `语义转译极简`, or `法式极简墨线海报`.
 - For video covers, technology explainers, AI tools, systems, code, psychology, or high-conflict social themes needing anime keyframe energy, prefer `复古日本科幻动画`.
+- For AI, coding, digital work, future tools, or contemporary topics that need a human-centered retro metaphor, prefer `复古时代错位编辑封面`.
 - For tutorials, product launches, workflow automation, tool integrations, brand collaborations, or two-logo partnership covers, prefer `品牌协同连接`.
 - For research-heavy material, prefer `科研期刊概念`.
 - For AI research, knowledge systems, design research, or quiet report-like editorial covers, prefer `Anthropic Research 风格`.
