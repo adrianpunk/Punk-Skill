@@ -1,6 +1,6 @@
 # Punk Avatar Style Catalog
 
-Use these user-visible style names. This catalog references reusable style atoms in the repository-level `styles/` directory. `punk-avatar` may list only the five styles below.
+Use these user-visible style names. This catalog references reusable style atoms in the repository-level `styles/` directory. `punk-avatar` may list only the six styles below.
 
 Do not copy prompt bodies into this catalog. Read the selected style's `META.md` and `STYLE.md` after the user chooses a style.
 
@@ -13,11 +13,13 @@ All styles default to `1:1` inside `punk-avatar`, regardless of the `default_rat
 | 凌乱蜡笔宠物肖像 | `messy-crayon-pet-portrait` | pet | `styles/messy-crayon-pet-portrait/META.md` | `styles/messy-crayon-pet-portrait/STYLE.md` | Pet avatars, named pet portraits, light crayon and colored-pencil pet drawings. |
 | 时尚速写观察页 | `fashion-sketch-observation` | person | `styles/fashion-sketch-observation/META.md` | `styles/fashion-sketch-observation/STYLE.md` | Human profile portraits with fashion sketch, travel observation, street-photo, or film-still energy. |
 | 拍立得纪念卡 | `polaroid-keepsake` | pet | `styles/polaroid-keepsake/META.md` | `styles/polaroid-keepsake/STYLE.md` | Pet avatar-derived keepsake cards, named pet watercolor polaroid portraits, collectible pet images. |
+| 极简纸感丙烯色块插画 | `minimal-paper-acrylic-block-illustration` | person, pet, object, scene, concept | `styles/minimal-paper-acrylic-block-illustration/META.md` | `styles/minimal-paper-acrylic-block-illustration/STYLE.md` | Small symbolic subjects on rough white paper with thin hand-drawn lines, vivid acrylic blocks, and large negative space. |
 
 ## Recommendation Rules
 
 - Pet subject: recommend `凌乱蜡笔宠物肖像`, `拍立得纪念卡`, `怪诞灵魂手绘`, and optionally `像素头像`.
 - Person subject: recommend `怪诞灵魂手绘`, `时尚速写观察页`, and `像素头像`.
 - Object subject or unclear subject: recommend `像素头像` first.
+- For a photo or theme that needs small subject scale, paper texture, clear color blocks, and quiet whitespace, recommend `极简纸感丙烯色块插画`.
 - Do not recommend pet-only styles for people or objects.
 - Do not recommend cover/poster styles here.

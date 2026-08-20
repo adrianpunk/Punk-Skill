@@ -14,6 +14,7 @@ const allowedStyleIds = [
   "messy-crayon-pet-portrait",
   "fashion-sketch-observation",
   "polaroid-keepsake",
+  "minimal-paper-acrylic-block-illustration",
 ];
 
 function read(file) {

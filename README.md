@@ -151,6 +151,13 @@ Use $punk-avatar to create a 凌乱蜡笔宠物肖像, aspect ratio 4:5. 宠物�
 Use $punk-avatar to create a text-only 像素头像: a calm robot barista with a blue cap and square glasses.
 ```
 
+纸感丙烯色块插画：
+
+```text
+Use $punk-avatar to create a 极简纸感丙烯色块插画 from this photo or theme:
+一个人走向一架通往天空的楼梯
+```
+
 ### 可用风格
 
 | 风格 | Style ID | 对象 | 适合内容 |
@@ -160,6 +167,7 @@ Use $punk-avatar to create a text-only 像素头像: a calm robot barista with a
 | 凌乱蜡笔宠物肖像 | `messy-crayon-pet-portrait` | 宠物 | 宠物头像、宠物手绘肖像 |
 | 时尚速写观察页 | `fashion-sketch-observation` | 人 | 人像头像、街拍和旅行观察页感肖像 |
 | 拍立得纪念卡 | `polaroid-keepsake` | 宠物 | 宠物头像衍生卡片、宠物纪念图 |
+| 极简纸感丙烯色块插画 | `minimal-paper-acrylic-block-illustration` | 人、宠物、物品、场景、主题 | 小主体、粗糙白纸、鲜明丙烯色块和大面积留白的纸感手绘插画 |
 
 ### 风格样例
 
@@ -169,6 +177,8 @@ Use $punk-avatar to create a text-only 像素头像: a calm robot barista with a
 | 像素头像 | 怪诞灵魂手绘 | 凌乱蜡笔宠物肖像 |
 | ![时尚速写观察页](./screenshots/punk-avatar-styles/fashion-sketch-observation.jpg) | ![拍立得纪念卡](./screenshots/punk-avatar-styles/polaroid-keepsake.jpg) | |
 | 时尚速写观察页 | 拍立得纪念卡 | |
+| ![极简纸感丙烯色块插画](./screenshots/punk-avatar-styles/minimal-paper-acrylic-block-illustration.png) | | |
+| 极简纸感丙烯色块插画 | | |
 
 ## 致谢
 

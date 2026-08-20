@@ -26,12 +26,13 @@ The style file defines the reusable visual language. The avatar blueprint define
 - For the selected style, read both:
   - `../../styles/{style-id}/META.md`
   - `../../styles/{style-id}/STYLE.md`
-- Expose only these five styles in the `punk-avatar` menu:
+- Expose only these six styles in the `punk-avatar` menu:
   - `pixel-avatar`
   - `grotesque-soul-sketch`
   - `messy-crayon-pet-portrait`
   - `fashion-sketch-observation`
   - `polaroid-keepsake`
+  - `minimal-paper-acrylic-block-illustration`
 - Do not expose cover/poster styles in the `punk-avatar` menu.
 - Do not read `punk-cover` references or templates for avatar runs.
 
@@ -53,6 +54,7 @@ The style file defines the reusable visual language. The avatar blueprint define
 
 3. Confirm style before generating any prompt:
    - If the user specifies one catalog style, use it.
+   - If the user supplies a complete visual direction that matches a catalog style, including the `极简纸感丙烯色块插画` brief, treat that style as specified and use its style atom without asking the user to repeat the style.
    - If no style is specified, recommend 2-3 eligible styles based on the subject type and ask the user to choose one.
    - When style is missing, stop after asking. Do not fill a style file, save prompt files, or generate an image.
    - Only auto-select one style when the user explicitly says to decide everything automatically.
@@ -61,6 +63,7 @@ The style file defines the reusable visual language. The avatar blueprint define
    - Pet subject: recommend `凌乱蜡笔宠物肖像`, `拍立得纪念卡`, and `怪诞灵魂手绘`; include `像素头像` when a more icon-like avatar may fit.
    - Person subject: recommend `怪诞灵魂手绘`, `时尚速写观察页`, and `像素头像`.
    - Object subject or unclear subject: recommend `像素头像` first.
+   - A photo or theme that needs a small symbolic subject, rough white paper, clear acrylic blocks, and large negative space: recommend `极简纸感丙烯色块插画`.
    - Do not recommend `messy-crayon-pet-portrait` for people.
    - Do not recommend `fashion-sketch-observation` for pets or objects unless the user explicitly asks for that style.
    - Do not recommend `polaroid-keepsake` for people or objects.
@@ -118,6 +121,7 @@ Do not ask for ratio unless the user explicitly wants ratio options.
 - Use `messy-crayon-pet-portrait` only for pets and pet portrait avatars.
 - Use `fashion-sketch-observation` only for people, especially fashion, travel, street-photo, film-still, or editorial personal portraits.
 - Use `polaroid-keepsake` only for pets, especially memorial, collectible, named pet cards, and avatar-derived keepsake cards.
+- Use `minimal-paper-acrylic-block-illustration` for people, pets, objects, scenes, or themes that need a simplified paper-texture illustration with vivid acrylic color blocks and a very small subject.
 
 ## Avatar Prompt Blueprint
 
