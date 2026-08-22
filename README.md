@@ -1,6 +1,6 @@
 # Punk Skill
 
-Punk Skill 是一组给 AI Agent 使用的创作与发布准备 Skills。安装后，可以用它把文章生成封面图、把人物、宠物、物品照片生成头像图，或将现有 Skill 整理为 REDSkill 上传候选包。
+Punk Skill 是一组给 AI Agent 使用的视觉生成 Skills。安装后，可以用它把文章生成封面图，或把人物、宠物、物品照片生成头像图。
 
 ## 安装
 
@@ -23,7 +23,6 @@ Use $punk-avatar ...
 | --- | --- |
 | `punk-cover` | 生成小红书、微信公众号、X / Twitter 等平台的封面图 |
 | `punk-avatar` | 生成人物头像、宠物头像、物品头像和宠物纪念卡 |
-| `punk-redskill-forge` | 将现有 Skill 整理为可审查的 REDSkill 上传副本，生成预检报告与提交字段草案 |
 
 ## punk-cover
 
@@ -180,19 +179,6 @@ Use $punk-avatar to create a 极简纸感丙烯色块插画 from this photo or t
 | 时尚速写观察页 | 拍立得纪念卡 | |
 | ![极简纸感丙烯色块插画](./screenshots/punk-avatar-styles/minimal-paper-acrylic-block-illustration.png) | | |
 | 极简纸感丙烯色块插画 | | |
-
-## punk-redskill-forge
-
-`punk-redskill-forge` 用来将一个现有 Skill 整理为适合提交小红书 REDSkill 的独立副本。它不会修改原始 Skill；会扫描疑似密钥、Cookie、隐藏指令和小红书账号自动化能力，并生成审计报告、提交字段草案和上传 ZIP。它不承诺审核通过，也不会替用户发布。
-
-### 使用示例
-
-```text
-帮我把这个 Skill 整理成可上传 REDSkill 的版本：
-<粘贴链接、文件夹路径或 ZIP 路径>
-```
-
-详见 [Punk REDSkill Forge 使用说明](./skills/punk-redskill-forge/README.md)。
 
 ## 致谢
 

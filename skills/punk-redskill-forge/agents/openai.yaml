@@ -1,4 +1,0 @@
-interface:
-  display_name: "Punk REDSkill Forge"
-  short_description: "把通用 Skill 安全适配为 REDSkill 上传包"
-  default_prompt: "使用 $punk-redskill-forge，帮我把这个 Skill 整理成可上传 REDSkill 的版本：<粘贴链接、文件夹或 ZIP 路径>"
