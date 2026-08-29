@@ -72,6 +72,7 @@ Use $punk-cover to create prompt-only output for this X cover, style 黑白灰�
 | 方块世界 | `block-world` | 教程、工具、系统搭建、升级、游戏化表达 |
 | 巨型透视中文标题 | `giant-perspective-chinese-title` | 中文标题主导、强冲击、活动和社媒封面 |
 | 超大标题图文穿插 | `interleaved-title-editorial-poster` | 单一中景主体、超大短标题、前后景图文穿插和强编辑海报感 |
+| 立体纸雕概念海报 | `layered-paper-cut-concept-poster` | 真实立体纸层、单一准确隐喻、极简留白、柔和光影和多比例独立重构 |
 | 积木世界 | `brick-world` | 搭建、团队、计划、教育、亲子和系统隐喻 |
 | 咨询报告视觉 | `consulting-report-visual` | 商业策略、方法论、产品分析、结构化观点 |
 | 科研期刊概念 | `research-journal-concept` | 科研、医学、材料、生物、机制类主题 |
@@ -101,8 +102,8 @@ Use $punk-cover to create prompt-only output for this X cover, style 黑白灰�
 | 黑白极简概念 | 语义转译极简 | 复古手撕拼贴 |
 | ![方块世界](./screenshots/punk-cover-styles/block-world.jpg) | ![巨型透视中文标题](./screenshots/punk-cover-styles/giant-perspective-chinese-title.png) | ![积木世界](./screenshots/punk-cover-styles/brick-world.png) |
 | 方块世界 | 巨型透视中文标题 | 积木世界 |
-| ![超大标题图文穿插](./screenshots/punk-cover-styles/interleaved-title-editorial-poster.png) | ![复古时代错位编辑封面](./screenshots/punk-cover-styles/midcentury-surreal-editorial-cover.png) | |
-| 超大标题图文穿插 | 复古时代错位编辑封面 | |
+| ![超大标题图文穿插](./screenshots/punk-cover-styles/interleaved-title-editorial-poster.png) | ![立体纸雕概念海报](./screenshots/punk-cover-styles/layered-paper-cut-concept-poster.png) | ![复古时代错位编辑封面](./screenshots/punk-cover-styles/midcentury-surreal-editorial-cover.png) |
+| 超大标题图文穿插 | 立体纸雕概念海报 | 复古时代错位编辑封面 |
 | ![咨询报告视觉](./screenshots/punk-cover-styles/consulting-report-visual.jpg) | ![科研期刊概念](./screenshots/punk-cover-styles/research-journal-concept.jpg) | ![复古弥散渐变](./screenshots/punk-cover-styles/retro-diffuse-gradient.jpg) |
 | 咨询报告视觉 | 科研期刊概念 | 复古弥散渐变 |
 | ![极简公共空间摄影](./screenshots/punk-cover-styles/minimal-public-space-photography.jpg) | ![商业杂志头版](./screenshots/punk-cover-styles/business-magazine-front-page.jpg) | ![黑白灰先锋几何](./screenshots/punk-cover-styles/black-white-gray-avant-geometry.jpg) |

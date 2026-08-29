@@ -27,6 +27,8 @@ This style is not a decorative filter. Every major cover decision must be implem
   - C-layer / subtitle or small text: {subtitle}
 - Platform: {platform}
 - Aspect ratio: {ratio}
+- Output dimensions: {output_dimensions_or_auto}
+- Output mode: {single_image_or_one_member_of_multi_size_suite}
 - Language: {language}
 - Use case: {use_case}
 - Short context summary: {summary}
@@ -154,6 +156,8 @@ The final image must satisfy all of these:
 ## Compilation Notes
 
 - Rewrite the blueprint into a natural final prompt. Do not leave meta-instructions like `{primary_visual_center}` unresolved.
+- For a multi-size suite, compile this blueprint once per target ratio or dimension. Each compiled prompt must request exactly one independently composed image and identify its target dimensions; do not ask one prompt to create a grid or contact sheet.
+- Preserve the suite's content, metaphor, style identity, material, and palette across targets, while recomposing scale, typography, whitespace, reading direction, and spatial behavior for each ratio.
 - Use the selected `META.md` metadata when it provides structured fields.
 - Use `STYLE.md` to recover style language that is not yet structured in metadata.
 - The final prompt may add style-specific sections when needed, but must not add another style.

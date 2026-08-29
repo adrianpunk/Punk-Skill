@@ -13,7 +13,7 @@ The final image prompt is not a loose concatenation of "cover instructions + sty
 
 Use three inputs:
 
-1. `punk-cover` task fields: platform, aspect ratio, title clarity, article summarization, cover communication goals, and universal output constraints.
+1. `punk-cover` task fields: platform, aspect ratio, optional output dimensions and output mode, title clarity, article summarization, cover communication goals, and universal output constraints.
 2. The selected style's `META.md` metadata and `STYLE.md` reusable visual style atom.
 3. `references/cover-prompt-blueprint.md`, which defines the full cover prompt shape.
 
@@ -46,11 +46,14 @@ The style file defines the reusable visual language. The cover blueprint defines
    - Custom: keep the user's ratio exactly.
    - If the user only provides source content, ask which platform they want to publish to. Do not generate the prompt yet.
    - If the user provides a custom ratio, use it and do not ask for platform unless the platform matters for wording.
+   - If the user provides exact width × height without a ratio, derive and preserve that ratio. If explicit dimensions and an explicit ratio conflict, ask which one should control before generating.
+   - Default to a single image. If the user explicitly requests a multi-size suite, preserve every requested ratio or output dimension and require at least two targets before generation.
+   - Never satisfy a multi-size request by cropping, stretching, padding, or placing multiple ratios in one grid; compile one independently composed prompt per target ratio.
    - Only skip this question when the user has already provided a platform, a ratio, or explicitly says to decide everything automatically.
 
 3. Confirm style before generating any prompt:
    - If the user specifies one catalog style, use it.
-   - If the user supplies a complete visual direction that matches a catalog style, including the `复古时代错位编辑封面` brief or a “超大标题 × 中央视觉主体 × 图文穿插” brief, treat that style as specified and use the matching `META.md` and `STYLE.md` without asking the user to repeat the style.
+   - If the user supplies a complete visual direction that matches a catalog style, including the `复古时代错位编辑封面` brief, a “超大标题 × 中央视觉主体 × 图文穿插” brief, or a “真实纸雕层叠 × 极简留白 × 柔和光影 × 准确隐喻” brief, treat that style as specified and use the matching `META.md` and `STYLE.md` without asking the user to repeat the style.
    - If no style is specified, recommend exactly three eligible catalog styles based on the content and give a one-sentence reason for each, then ask the user to choose one or provide a custom style direction.
    - Do not show all eligible styles by default unless the user asks for the full menu.
    - Only auto-select one style when the user explicitly says to decide everything automatically, not merely because they provided an article.
@@ -76,14 +79,17 @@ The style file defines the reusable visual language. The cover blueprint defines
    - Put only summarized context into the prompt; do not paste the original article body into the final prompt.
    - Leave optional fields blank only when the prompt says they can be blank.
    - Do not output analysis inside the final prompt.
+   - For a multi-size suite, compile the blueprint separately for each target ratio or dimension. Keep the content, metaphor, style identity, material, and palette consistent, but rewrite composition, scale, typography, whitespace, reading direction, and spatial behavior for each target.
 
 6. Save files before image generation:
-   - Create `punk-assets/punk-cover/{slug}/prompts/cover.md` with the complete filled prompt.
-   - If image generation returns an explicit local file path, downloadable URL, or image bytes for the current run, save that artifact as `punk-assets/punk-cover/{slug}/cover.png`.
+   - For a single image, create `punk-assets/punk-cover/{slug}/prompts/cover.md` with the complete filled prompt.
+   - For an explicitly requested multi-size suite, instead create one file per target as `punk-assets/punk-cover/{slug}/prompts/cover-{ratio-or-size}.md`, using filesystem-safe ratio or size labels.
+   - For a single image, if image generation returns an explicit local file path, downloadable URL, or image bytes for the current run, save that artifact as `punk-assets/punk-cover/{slug}/cover.png`.
    - Do not infer the correct artifact by scanning broad generated-image directories, because those directories may contain unrelated images from other runs.
    - If the image-generation tool only returns an inline preview with no explicit retrievable artifact for the current run, do not create a fake `cover.png`.
+   - For a multi-size suite, save each explicitly retrievable artifact as `punk-assets/punk-cover/{slug}/cover-{ratio-or-size}.png`; never combine the suite into a contact sheet unless the user separately requests one.
 
-7. Generate an image by default after saving the prompt when a usable image-generation tool is available, such as `image_gen`. Treat inline preview generation as successful image generation, but treat local `cover.png` saving as successful only when the tool explicitly exposes a current-run artifact. Skip image generation only when the user explicitly asks for prompt-only output or the current environment has no image-generation tool. If image generation is unavailable, return the prompt file path and the full prompt content.
+7. Generate an image by default after saving the prompt when a usable image-generation tool is available, such as `image_gen`. Generate one independent image per target when the user explicitly requests a multi-size suite; otherwise generate one image. Treat inline preview generation as successful image generation, but treat local image saving as successful only when the tool explicitly exposes a current-run artifact. Skip image generation only when the user explicitly asks for prompt-only output or the current environment has no image-generation tool. If image generation is unavailable, return the prompt file path and the full prompt content.
 
 ## First Response Format
 
@@ -104,6 +110,7 @@ End by asking the user to choose a platform and one style, or to say "auto" if t
 ## Style Selection Heuristics
 
 - Use styles whose `outputs` metadata contains `cover` or `poster`.
+- Use `立体纸雕概念海报` when one relationship, tension, or transformation should become a physically believable layered-paper metaphor with generous negative space, soft studio shadows, and typography integrated into the paper structure.
 - Use `超大标题图文穿插` when the title should become part of the composition through a single central subject, explicit front/back typography layers, controlled occlusion, and strong editorial-poster impact across custom ratios.
 - Use business/report styles for strategy, product, AI, startup, industry, consulting, or analysis content.
 - Use `复古时代错位编辑封面` for AI, coding, digital work, future tools, or contemporary topics that benefit from a human-centered mid-century illustration and one restrained era-displacement metaphor.
@@ -139,7 +146,7 @@ The cover must work for sharing: first glance identifies the topic, second glanc
 
 Avoid universal cover failures: PPT cover feel, course-cover feel, generic information-graphic template, e-commerce advertisement, unrelated decoration, misspelled title, missing title, title cropped beyond recognition, or title severely blocked by visual elements.
 
-Generate only one final image. Do not output explanations, alternatives, grids, contact sheets, or multi-option compositions.
+Generate only one final image per target ratio. For an explicitly requested multi-size suite, generate separate independently composed images rather than a grid or contact sheet. Do not output explanations, alternatives, or multi-option compositions.
 ```
 
 ## Output Discipline
@@ -152,3 +159,4 @@ Generate only one final image. Do not output explanations, alternatives, grids, 
 - Do not combine multiple styles.
 - Do not add a second custom style section beyond the selected style visual layer.
 - Do not expose non-cover styles in the style menu.
+- Default to one output. Only generate multiple images when the user explicitly requests a multi-size suite, and keep each ratio as a separate composition and artifact.
