@@ -11,6 +11,7 @@ Do not copy prompt bodies into this catalog. Read the selected style's `META.md`
 | 复古手撕拼贴 | `retro-torn-collage` | `styles/retro-torn-collage/META.md` | `styles/retro-torn-collage/STYLE.md` | Social posts, cultural topics, controversy, growth, street energy, retro editorial covers. |
 | 方块世界 | `block-world` | `styles/block-world/META.md` | `styles/block-world/STYLE.md` | Playful tutorials, tools, systems, building, upgrade, learning, game-like or constructive themes. |
 | 巨型透视中文标题 | `giant-perspective-chinese-title` | `styles/giant-perspective-chinese-title/META.md` | `styles/giant-perspective-chinese-title/STYLE.md` | Chinese title-led covers needing maximum impact, spatial depth, speed, conflict, or event-poster energy. |
+| 超大标题图文穿插 | `interleaved-title-editorial-poster` | `styles/interleaved-title-editorial-poster/META.md` | `styles/interleaved-title-editorial-poster/STYLE.md` | Modern editorial posters with one central subject and a huge short title interleaved across foreground and background layers. |
 | 积木世界 | `brick-world` | `styles/brick-world/META.md` | `styles/brick-world/STYLE.md` | Playful systems, building, teamwork, plans, toys, family, education, and constructive metaphors. |
 | 咨询报告视觉 | `consulting-report-visual` | `styles/consulting-report-visual/META.md` | `styles/consulting-report-visual/STYLE.md` | Business strategy, frameworks, operations, product thinking, consulting reports, and structured analysis. |
 | 科研期刊概念 | `research-journal-concept` | `styles/research-journal-concept/META.md` | `styles/research-journal-concept/STYLE.md` | Science, research, medicine, materials, mechanisms, academic or lab-themed covers. |
@@ -46,9 +47,10 @@ These reusable style atoms exist in `styles/`, but are not part of the default `
 
 ## Automatic Recommendations
 
-- For Xiaohongshu tutorials, prefer `巨型透视中文标题`, `黑红剪影`, `复古手撕拼贴`, `方块世界`, or `积木世界`.
+- For Xiaohongshu tutorials, prefer `巨型透视中文标题`, `超大标题图文穿插`, `黑红剪影`, `复古手撕拼贴`, `方块世界`, or `积木世界`.
 - For WeChat public account explainers, prefer `商业杂志头版`, `黑红剪影`, `咨询报告视觉`, `黑白极简概念`, `复古油墨点阵隐喻`, `极简公共空间摄影`, `复古弥散渐变`, `黑色复古现代主义封面`, or `法式极简墨线海报`.
-- For X covers, prefer `商业杂志头版`, `黑红剪影`, `黑白极简概念`, `复古油墨点阵隐喻`, `银色锡纸蓝字`, `黑白灰先锋几何`, `极简公共空间摄影`, `语义转译极简`, or `法式极简墨线海报`.
+- For X covers, prefer `超大标题图文穿插`, `商业杂志头版`, `黑红剪影`, `黑白极简概念`, `复古油墨点阵隐喻`, `银色锡纸蓝字`, `黑白灰先锋几何`, `极简公共空间摄影`, `语义转译极简`, or `法式极简墨线海报`.
+- For short-title covers or posters needing one central subject, bold magazine typography, and visible foreground/background text interleaving, prefer `超大标题图文穿插`.
 - For video covers, technology explainers, AI tools, systems, code, psychology, or high-conflict social themes needing anime keyframe energy, prefer `复古日本科幻动画`.
 - For AI, coding, digital work, future tools, or contemporary topics that need a human-centered retro metaphor, prefer `复古时代错位编辑封面`.
 - For tutorials, product launches, workflow automation, tool integrations, brand collaborations, or two-logo partnership covers, prefer `品牌协同连接`.
