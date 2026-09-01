@@ -1,4 +1,4 @@
 interface:
   display_name: "Punk Avatar"
-  short_description: "Generate avatars from curated Punk visual styles"
-  default_prompt: "Use $punk-avatar to turn this photo or description into an avatar image."
+  short_description: "Generate avatars and surreal portraits in Punk styles"
+  default_prompt: "Use $punk-avatar to turn this photo or description into an avatar or surreal portrait."
