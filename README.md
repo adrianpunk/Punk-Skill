@@ -22,7 +22,7 @@ Use $punk-avatar ...
 | Skill | 用途 |
 | --- | --- |
 | `punk-cover` | 生成小红书、微信公众号、X / Twitter 等平台的封面图 |
-| `punk-avatar` | 生成人物头像、宠物头像、物品头像和宠物纪念卡 |
+| `punk-avatar` | 生成人物头像、宠物头像、物品头像、宠物纪念卡和超现实人物纸艺图 |
 
 ## punk-cover
 
@@ -123,7 +123,7 @@ Use $punk-cover to create prompt-only output for this X cover, style 黑白灰�
 
 ## punk-avatar
 
-`punk-avatar` 用来把人物、宠物、物品照片或文字描述生成头像图。也可以给宠物生成手绘头像和拍立得纪念卡。
+`punk-avatar` 用来把人物、宠物、物品照片或文字描述生成头像图，也可以生成宠物纪念卡，以及让真实人物从扁平景色中跃出的超现实纸艺作品。
 
 ### 使用示例
 
@@ -164,6 +164,18 @@ Use $punk-avatar to create a 极简纸感丙烯色块插画 from this photo or t
 一个人走向一架通往天空的楼梯
 ```
 
+立体人物扁平景色纸艺（前后对比图）：
+
+```text
+Use $punk-avatar to create a 立体人物扁平景色纸艺 前后对比图 from this photo.
+```
+
+立体人物扁平景色纸艺（单张效果图）：
+
+```text
+Use $punk-avatar to create a 立体人物扁平景色纸艺 单张效果图 from this photo.
+```
+
 ### 可用风格
 
 | 风格 | Style ID | 对象 | 适合内容 |
@@ -174,6 +186,7 @@ Use $punk-avatar to create a 极简纸感丙烯色块插画 from this photo or t
 | 时尚速写观察页 | `fashion-sketch-observation` | 人 | 人像头像、街拍和旅行观察页感肖像 |
 | 拍立得纪念卡 | `polaroid-keepsake` | 宠物 | 宠物头像衍生卡片、宠物纪念图 |
 | 极简纸感丙烯色块插画 | `minimal-paper-acrylic-block-illustration` | 人、宠物、物品、场景、主题 | 小主体、粗糙白纸、鲜明丙烯色块和大面积留白的纸感手绘插画 |
+| 立体人物扁平景色纸艺 | `surreal-pop-up-paper-landscape` | 人、场景 | 真人保持立体，原照片环境向后翻倒并压扁为纸面景色；支持前后对比图与单张效果图 |
 
 ### 风格样例
 
@@ -183,8 +196,8 @@ Use $punk-avatar to create a 极简纸感丙烯色块插画 from this photo or t
 | 像素头像 | 怪诞灵魂手绘 | 凌乱蜡笔宠物肖像 |
 | ![时尚速写观察页](./screenshots/punk-avatar-styles/fashion-sketch-observation.jpg) | ![拍立得纪念卡](./screenshots/punk-avatar-styles/polaroid-keepsake.jpg) | |
 | 时尚速写观察页 | 拍立得纪念卡 | |
-| ![极简纸感丙烯色块插画](./screenshots/punk-avatar-styles/minimal-paper-acrylic-block-illustration.png) | | |
-| 极简纸感丙烯色块插画 | | |
+| ![极简纸感丙烯色块插画](./screenshots/punk-avatar-styles/minimal-paper-acrylic-block-illustration.png) | ![立体人物扁平景色纸艺](./screenshots/punk-avatar-styles/surreal-pop-up-paper-landscape.png) | |
+| 极简纸感丙烯色块插画 | 立体人物扁平景色纸艺 | |
 
 ## 致谢
 

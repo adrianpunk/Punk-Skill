@@ -15,6 +15,7 @@ const allowedStyleIds = [
   "fashion-sketch-observation",
   "polaroid-keepsake",
   "minimal-paper-acrylic-block-illustration",
+  "surreal-pop-up-paper-landscape",
 ];
 
 function read(file) {
@@ -72,6 +73,34 @@ if (!failures.length) {
 
     if (!fs.existsSync(promptPath)) {
       fail(`Missing style file: ${path.relative(root, promptPath)}`);
+    }
+  }
+
+  for (const modeFile of ["before-after.md", "final-artwork.md"]) {
+    const modePath = path.join(
+      root,
+      "styles",
+      "surreal-pop-up-paper-landscape",
+      "references",
+      modeFile,
+    );
+    if (!fs.existsSync(modePath)) {
+      fail(`Missing surreal paper-art mode: ${path.relative(root, modePath)}`);
+    }
+  }
+
+  const surrealStylePath = path.join(
+    root,
+    "styles",
+    "surreal-pop-up-paper-landscape",
+    "STYLE.md",
+  );
+  if (fs.existsSync(surrealStylePath)) {
+    const surrealStyle = read(surrealStylePath);
+    for (const phrase of ["before-after", "final-artwork", "75°–85°", "10%–20%"]) {
+      if (!surrealStyle.includes(phrase)) {
+        fail(`surreal-pop-up-paper-landscape STYLE.md missing mode anchor: ${phrase}`);
+      }
     }
   }
 

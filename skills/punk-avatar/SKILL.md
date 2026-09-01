@@ -1,6 +1,6 @@
 ---
 name: punk-avatar
-description: Generate avatar images and reusable avatar image prompts from the shared Punk style library for people, pets, objects, profile pictures, pet portraits, and avatar-derived keepsake cards. Use this skill to identify the subject from image or text, choose one avatar-capable style, compile the selected style atom into the avatar blueprint, save the final prompt, and generate the image when an image-generation tool is available.
+description: Generate avatar images, surreal paper-art portraits, and reusable image prompts from the shared Punk style library for people, pets, objects, profile pictures, pet portraits, and keepsake cards. Use this skill to identify the subject from image or text, choose one avatar-capable style and any required style mode, compile the selected style atom into the avatar blueprint, save the final prompt, and generate the image when an image-generation tool is available.
 ---
 
 # Punk Avatar
@@ -26,13 +26,17 @@ The style file defines the reusable visual language. The avatar blueprint define
 - For the selected style, read both:
   - `../../styles/{style-id}/META.md`
   - `../../styles/{style-id}/STYLE.md`
-- Expose only these six styles in the `punk-avatar` menu:
+- Expose only these seven styles in the `punk-avatar` menu:
   - `pixel-avatar`
   - `grotesque-soul-sketch`
   - `messy-crayon-pet-portrait`
   - `fashion-sketch-observation`
   - `polaroid-keepsake`
   - `minimal-paper-acrylic-block-illustration`
+  - `surreal-pop-up-paper-landscape`
+- `surreal-pop-up-paper-landscape` has two output modes. After reading its `META.md` and `STYLE.md`, read exactly one mode reference selected by the user:
+  - `../../styles/surreal-pop-up-paper-landscape/references/before-after.md`
+  - `../../styles/surreal-pop-up-paper-landscape/references/final-artwork.md`
 - Do not expose cover/poster styles in the `punk-avatar` menu.
 - Do not read `punk-cover` references or templates for avatar runs.
 
@@ -50,34 +54,40 @@ The style file defines the reusable visual language. The avatar blueprint define
    - If the user specifies `3:4`, `4:5`, `16:9`, or any custom ratio, keep the user's ratio exactly.
    - Do not use the selected style metadata's `default_ratio` as the avatar default.
    - For `polaroid-keepsake`, default to `1:1` in `punk-avatar`; only generate a vertical polaroid card when the user explicitly asks for a vertical ratio.
+   - For `surreal-pop-up-paper-landscape`, use `3:2` for `before-after` mode and `3:4` for `final-artwork` mode when the user omits the ratio. Keep any user-specified ratio exactly.
    - Do not ask a ratio question when the user omits ratio.
 
 3. Confirm style before generating any prompt:
    - If the user specifies one catalog style, use it.
-   - If the user supplies a complete visual direction that matches a catalog style, including the `极简纸感丙烯色块插画` brief, treat that style as specified and use its style atom without asking the user to repeat the style.
+   - If the user supplies a complete visual direction that matches a catalog style, including the `极简纸感丙烯色块插画` or `立体人物扁平景色纸艺` brief, treat that style as specified and use its style atom without asking the user to repeat the style.
    - If no style is specified, recommend 2-3 eligible styles based on the subject type and ask the user to choose one.
    - When style is missing, stop after asking. Do not fill a style file, save prompt files, or generate an image.
    - Only auto-select one style when the user explicitly says to decide everything automatically.
+   - For `surreal-pop-up-paper-landscape`, also resolve the output mode. Map requests for `前后对比图`, `对比图`, `before/after`, or `comparison` to `before-after`; map `效果图`, `单张效果图`, `成品图`, `final artwork`, or `single image` to `final-artwork`.
+   - If the user selects `surreal-pop-up-paper-landscape` but gives no mode, ask only which of the two modes to use and stop. Do not generate both unless the user explicitly requests both.
 
 4. Recommendation rules:
    - Pet subject: recommend `凌乱蜡笔宠物肖像`, `拍立得纪念卡`, and `怪诞灵魂手绘`; include `像素头像` when a more icon-like avatar may fit.
    - Person subject: recommend `怪诞灵魂手绘`, `时尚速写观察页`, and `像素头像`.
    - Object subject or unclear subject: recommend `像素头像` first.
    - A photo or theme that needs a small symbolic subject, rough white paper, clear acrylic blocks, and large negative space: recommend `极简纸感丙烯色块插画`.
+   - A person photo with a recognizable surrounding scene that should become a photorealistic upright figure emerging from a flattened paper landscape: recommend `立体人物扁平景色纸艺`.
    - Do not recommend `messy-crayon-pet-portrait` for people.
    - Do not recommend `fashion-sketch-observation` for pets or objects unless the user explicitly asks for that style.
    - Do not recommend `polaroid-keepsake` for people or objects.
 
 5. Use this confirmation gate:
    - Missing style: ask for style choice and stop.
-   - Missing ratio: silently use `1:1`.
+   - Missing ratio: silently use the default resolved in step 2.
    - Known style: continue without asking.
+   - `surreal-pop-up-paper-landscape` with missing mode: ask for `前后对比图` or `单张效果图` and stop.
    - If both style and subject are known enough to proceed, compile the prompt.
 
 6. Compile the final image prompt:
    - Use `references/avatar-prompt-blueprint.md` as the required structure for `prompts/avatar.md`.
    - Read exactly one selected style visual atom from `../../styles/{style-id}/STYLE.md`.
    - Read the selected style metadata from `../../styles/{style-id}/META.md`.
+   - For `surreal-pop-up-paper-landscape`, read and compile exactly one selected mode reference. The mode reference controls whether the result is a side-by-side comparison or one standalone artwork; never blend the two output contracts.
    - Extract the selected style's non-negotiable visual anchors: subject treatment, composition, background behavior, line or texture system, color logic, typography or handwritten behavior, likeness constraints, and negative constraints.
    - Fuse the avatar task fields and style anchors into one full avatar prompt. The final prompt should read like a complete avatar-generation brief, not like two unrelated prompt fragments pasted together.
    - Include avatar-shape sections for role/task, input fields, source interpretation, subject identity, likeness policy, avatar composition, crop safety, background, style application, color/material/texture, optional text/name handling, negative constraints, and final standard.
@@ -122,6 +132,7 @@ Do not ask for ratio unless the user explicitly wants ratio options.
 - Use `fashion-sketch-observation` only for people, especially fashion, travel, street-photo, film-still, or editorial personal portraits.
 - Use `polaroid-keepsake` only for pets, especially memorial, collectible, named pet cards, and avatar-derived keepsake cards.
 - Use `minimal-paper-acrylic-block-illustration` for people, pets, objects, scenes, or themes that need a simplified paper-texture illustration with vivid acrylic color blocks and a very small subject.
+- Use `surreal-pop-up-paper-landscape` for image-based person portraits where the real figure must stay upright and photorealistic while the photographed environment folds down into a shallow paper-plane landscape.
 
 ## Avatar Prompt Blueprint
 
