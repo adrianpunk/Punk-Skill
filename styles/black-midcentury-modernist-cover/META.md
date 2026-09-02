@@ -23,7 +23,7 @@ cover_shape_adaptation:
   - vertical covers should prioritize a compact poster-like hierarchy with the title and subject clearly separated
 must_preserve:
   - black as the dominant color across background or subject
-  - no more than three colors: black, white or warm ivory, and one vivid accent
+  - "no more than three colors: black, white or warm ivory, and one vivid accent"
   - mid-century modern retro editorial illustration character
   - strong, readable title and concise supporting text
   - full-bleed edges with no card frame, border, rounded white margin, or outer pale band

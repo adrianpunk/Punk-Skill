@@ -16,12 +16,13 @@
 
 ## 构建、测试与开发命令
 
-本仓库没有包管理器、构建步骤或自动化测试命令。修改后建议用轻量检查确认结构和格式：
+本仓库同时提供 Markdown Skills 和 Python 本地工具。修改后运行：
 
 ```sh
-rg --files
-sed -n '1,220p' skills/punk-cover/SKILL.md
-sed -n '1,120p' skills/punk-cover/references/style-catalog.md
+node scripts/validate-punk-cover.mjs
+node scripts/validate-punk-avatar.mjs
+PYTHONPATH=src python3 -m punk_skill.cli validate
+PYTHONPATH=src python3 -m unittest discover -s tests -v
 git diff --check
 ```
 
