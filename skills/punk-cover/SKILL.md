@@ -53,7 +53,7 @@ The style file defines the reusable visual language. The cover blueprint defines
 
 3. Confirm style before generating any prompt:
    - If the user specifies one catalog style, use it.
-   - If the user supplies a complete visual direction that matches a catalog style, including the `复古时代错位编辑封面` brief, a “超大标题 × 中央视觉主体 × 图文穿插” brief, a “真实纸雕层叠 × 极简留白 × 柔和光影 × 准确隐喻” brief, an “抽象概念 → 具体场景 → 游戏机制 → 像素视觉隐喻” brief, or an “OSB 木板 × 工业蓝标识字 × 极简线条隐喻” brief, treat that style as specified and use the matching `META.md` and `STYLE.md` without asking the user to repeat the style.
+   - If the user supplies a complete visual direction that matches a catalog style, including the `复古时代错位编辑封面` brief, a “超大标题 × 中央视觉主体 × 图文穿插” brief, a “真实纸雕层叠 × 极简留白 × 柔和光影 × 准确隐喻” brief, a “真实纸张质感 × 击凸压凹 × 文字构图 × 克制视觉隐喻” brief, an “抽象概念 → 具体场景 → 游戏机制 → 像素视觉隐喻” brief, or an “OSB 木板 × 工业蓝标识字 × 极简线条隐喻” brief, treat that style as specified and use the matching `META.md` and `STYLE.md` without asking the user to repeat the style.
    - If no style is specified, recommend exactly three eligible catalog styles based on the content and give a one-sentence reason for each, then ask the user to choose one or provide a custom style direction.
    - Do not show all eligible styles by default unless the user asks for the full menu.
    - Only auto-select one style when the user explicitly says to decide everything automatically, not merely because they provided an article.
@@ -113,6 +113,7 @@ End by asking the user to choose a platform and one style, or to say "auto" if t
 - Use `OSB 工业蓝线条隐喻` when the visual direction requires a full-bleed authentic OSB board, upper-left matte industrial-blue signage, one lower-right continuous-line metaphor, and more negative space than text and graphics combined.
 - Use `Godot 2D 像素隐喻海报` when a theme should become one playable-feeling pixel-art level, one game mechanic, one character action, and one symbolic goal or obstacle rather than a literal illustration or pixel-filtered image.
 - Use `立体纸雕概念海报` when one relationship, tension, or transformation should become a physically believable layered-paper metaphor with generous negative space, soft studio shadows, and typography integrated into the paper structure.
+- Use `纸面击凸压凹封面` when the cover should feel like an art-book or independent-magazine surface: authentic paper fiber, letterpress-like emboss and deboss, editorial type as composition, one restrained relief metaphor, and large negative space.
 - Use `超大标题图文穿插` when the title should become part of the composition through a single central subject, explicit front/back typography layers, controlled occlusion, and strong editorial-poster impact across custom ratios.
 - Use business/report styles for strategy, product, AI, startup, industry, consulting, or analysis content.
 - Use `复古时代错位编辑封面` for AI, coding, digital work, future tools, or contemporary topics that benefit from a human-centered mid-century illustration and one restrained era-displacement metaphor.

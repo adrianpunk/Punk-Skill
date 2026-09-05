@@ -73,6 +73,7 @@ Use $punk-cover to create prompt-only output for this X cover, style 黑白灰�
 | 巨型透视中文标题 | `giant-perspective-chinese-title` | 中文标题主导、强冲击、活动和社媒封面 |
 | 超大标题图文穿插 | `interleaved-title-editorial-poster` | 单一中景主体、超大短标题、前后景图文穿插和强编辑海报感 |
 | 立体纸雕概念海报 | `layered-paper-cut-concept-poster` | 真实立体纸层、单一准确隐喻、极简留白、柔和光影和多比例独立重构 |
+| 纸面击凸压凹封面 | `paper-emboss-deboss-cover` | 真实纸张质感、击凸压凹工艺、灵活文字构图、单一克制隐喻和艺术书封气质 |
 | Godot 2D 像素隐喻海报 | `godot-2d-pixel-metaphor-poster` | 把抽象主题转成单一游戏机制、角色动作、目标或阻碍与完整像素关卡世界 |
 | OSB 工业蓝线条隐喻 | `osb-industrial-blue-line-metaphor` | 满版真实 OSB 木板、左上工业蓝标识字、右下单线隐喻和严格留白控制 |
 | 积木世界 | `brick-world` | 搭建、团队、计划、教育、亲子和系统隐喻 |
@@ -106,8 +107,8 @@ Use $punk-cover to create prompt-only output for this X cover, style 黑白灰�
 | 方块世界 | 巨型透视中文标题 | 积木世界 |
 | ![超大标题图文穿插](./screenshots/punk-cover-styles/interleaved-title-editorial-poster.png) | ![立体纸雕概念海报](./screenshots/punk-cover-styles/layered-paper-cut-concept-poster.png) | ![复古时代错位编辑封面](./screenshots/punk-cover-styles/midcentury-surreal-editorial-cover.png) |
 | 超大标题图文穿插 | 立体纸雕概念海报 | 复古时代错位编辑封面 |
-| ![Godot 2D 像素隐喻海报](./screenshots/punk-cover-styles/godot-2d-pixel-metaphor-poster.png) | ![OSB 工业蓝线条隐喻](./screenshots/punk-cover-styles/osb-industrial-blue-line-metaphor.png) | |
-| Godot 2D 像素隐喻海报 | OSB 工业蓝线条隐喻 | |
+| ![纸面击凸压凹封面](./screenshots/punk-cover-styles/paper-emboss-deboss-cover.png) | ![Godot 2D 像素隐喻海报](./screenshots/punk-cover-styles/godot-2d-pixel-metaphor-poster.png) | ![OSB 工业蓝线条隐喻](./screenshots/punk-cover-styles/osb-industrial-blue-line-metaphor.png) |
+| 纸面击凸压凹封面 | Godot 2D 像素隐喻海报 | OSB 工业蓝线条隐喻 |
 | ![咨询报告视觉](./screenshots/punk-cover-styles/consulting-report-visual.jpg) | ![科研期刊概念](./screenshots/punk-cover-styles/research-journal-concept.jpg) | ![复古弥散渐变](./screenshots/punk-cover-styles/retro-diffuse-gradient.jpg) |
 | 咨询报告视觉 | 科研期刊概念 | 复古弥散渐变 |
 | ![极简公共空间摄影](./screenshots/punk-cover-styles/minimal-public-space-photography.jpg) | ![商业杂志头版](./screenshots/punk-cover-styles/business-magazine-front-page.jpg) | ![黑白灰先锋几何](./screenshots/punk-cover-styles/black-white-gray-avant-geometry.jpg) |
