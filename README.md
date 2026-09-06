@@ -203,6 +203,10 @@ Use $punk-avatar to create a 立体人物扁平景色纸艺 单张效果图 from
 | ![极简纸感丙烯色块插画](./screenshots/punk-avatar-styles/minimal-paper-acrylic-block-illustration.png) | ![立体人物扁平景色纸艺](./screenshots/punk-avatar-styles/surreal-pop-up-paper-landscape.png) | |
 | 极简纸感丙烯色块插画 | 立体人物扁平景色纸艺 | |
 
+## License
+
+本仓库内容采用 [MIT License](./LICENSE) 发布；仓库中另有明确授权或声明的第三方素材除外。
+
 ## 致谢
 
 - 提示词设计与风格方向：[@adrianpunk](https://github.com/adrianpunk) · [X](https://x.com/AdrianPunk115)
