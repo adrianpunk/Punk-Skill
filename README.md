@@ -67,6 +67,7 @@ Use $punk-cover to create prompt-only output for this X cover, style 黑白灰�
 | 风格 | Style ID | 适合内容 |
 | --- | --- | --- |
 | 黑白极简概念 | `black-white-minimal-concept` | 抽象观点、战略、哲学、批判性主题 |
+| 黑白复古蚀刻版画封面 | `black-white-etching-editorial-cover` | 黑白蚀刻、铜版画、木刻、古典科学插图、超现实编辑和哲学主题 |
 | 语义转译极简 | `semantic-minimal-translation` | 单词、短句、口号、概念转译 |
 | 复古手撕拼贴 | `retro-torn-collage` | 社交传播、文化议题、街头感、复古杂志感 |
 | 方块世界 | `block-world` | 教程、工具、系统搭建、升级、游戏化表达 |
@@ -103,6 +104,8 @@ Use $punk-cover to create prompt-only output for this X cover, style 黑白灰�
 |:---:|:---:|:---:|
 | ![黑白极简概念](./screenshots/punk-cover-styles/black-white-minimal-concept.png) | ![语义转译极简](./screenshots/punk-cover-styles/semantic-minimal-translation.png) | ![复古手撕拼贴](./screenshots/punk-cover-styles/retro-torn-collage.png) |
 | 黑白极简概念 | 语义转译极简 | 复古手撕拼贴 |
+| ![黑白复古蚀刻版画封面](./screenshots/punk-cover-styles/black-white-etching-editorial-cover.png) | | |
+| 黑白复古蚀刻版画封面 | | |
 | ![方块世界](./screenshots/punk-cover-styles/block-world.jpg) | ![巨型透视中文标题](./screenshots/punk-cover-styles/giant-perspective-chinese-title.png) | ![积木世界](./screenshots/punk-cover-styles/brick-world.png) |
 | 方块世界 | 巨型透视中文标题 | 积木世界 |
 | ![超大标题图文穿插](./screenshots/punk-cover-styles/interleaved-title-editorial-poster.png) | ![立体纸雕概念海报](./screenshots/punk-cover-styles/layered-paper-cut-concept-poster.png) | ![复古时代错位编辑封面](./screenshots/punk-cover-styles/midcentury-surreal-editorial-cover.png) |
