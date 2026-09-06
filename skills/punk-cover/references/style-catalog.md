@@ -7,6 +7,7 @@ Do not copy prompt bodies into this catalog. Read the selected style's `META.md`
 | Style | Style ID | Metadata | Style | Best For |
 | --- | --- | --- | --- | --- |
 | 黑白极简概念 | `black-white-minimal-concept` | `styles/black-white-minimal-concept/META.md` | `styles/black-white-minimal-concept/STYLE.md` | Abstract, editorial, philosophical, strategic, restrained covers with strong typography and visual metaphor. |
+| 黑白复古蚀刻版画封面 | `black-white-etching-editorial-cover` | `styles/black-white-etching-editorial-cover/META.md` | `styles/black-white-etching-editorial-cover/STYLE.md` | Monochrome engraving, etching, antique scientific-illustration, surreal editorial, and philosophical covers built around one strong metaphor. |
 | 语义转译极简 | `semantic-minimal-translation` | `styles/semantic-minimal-translation/META.md` | `styles/semantic-minimal-translation/STYLE.md` | One word, short phrase, slogan, or concept that needs a clever minimal visual translation. |
 | 复古手撕拼贴 | `retro-torn-collage` | `styles/retro-torn-collage/META.md` | `styles/retro-torn-collage/STYLE.md` | Social posts, cultural topics, controversy, growth, street energy, retro editorial covers. |
 | 方块世界 | `block-world` | `styles/block-world/META.md` | `styles/block-world/STYLE.md` | Playful tutorials, tools, systems, building, upgrade, learning, game-like or constructive themes. |
@@ -57,6 +58,7 @@ These reusable style atoms exist in `styles/`, but are not part of the default `
 - For short-title covers or posters needing one central subject, bold magazine typography, and visible foreground/background text interleaving, prefer `超大标题图文穿插`.
 - For concepts, methods, relationships, growth, change, or emotional themes that can be expressed through one clear spatial action in tactile layered paper, prefer `立体纸雕概念海报`.
 - For design, art, method, brand, writing, philosophy, or abstract themes that need authentic paper relief, flexible editorial typography, and one restrained metaphor, prefer `纸面击凸压凹封面`.
+- For philosophical, critical, mechanism-heavy, or surreal themes explicitly requesting monochrome engraving, etching, copperplate, wood engraving, or antique scientific illustration, prefer `黑白复古蚀刻版画封面`.
 - For direction, distance, scale, loops, hope, accumulation, attention, AI-era tension, or other abstract themes that can become one playable pixel-world mechanic, prefer `Godot 2D 像素隐喻海报`.
 - For workplace, organization, efficiency, tools, relationships, paths, knots, interruptions, or reconnection themes needing tactile material contrast and one sparse line metaphor, prefer `OSB 工业蓝线条隐喻`.
 - For video covers, technology explainers, AI tools, systems, code, psychology, or high-conflict social themes needing anime keyframe energy, prefer `复古日本科幻动画`.
