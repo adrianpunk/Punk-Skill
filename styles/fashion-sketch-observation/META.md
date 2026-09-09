@@ -9,7 +9,7 @@ outputs: [portrait, editorial_page]
 default_ratio: "keep-original"
 required_fields: [上传人物照片, 画幅比例]
 optional_fields: [页面标题, 场景气质]
-source: exports/Prompt列表_导出_2026-06-16/12_手绘风格/提示词.md
+source: "licensor-authored private export: Prompt列表_导出_2026-06-16/12_手绘风格/提示词.md"
 ```
 
 ## Style Intent

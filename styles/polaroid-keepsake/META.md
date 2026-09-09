@@ -9,7 +9,7 @@ outputs: [polaroid, portrait]
 default_ratio: "3:4"
 required_fields: [上传宠物照片, 宠物名, 宠物类型, 外貌特征, 性格表情]
 optional_fields: [拍立得内背景色, 超框元素, 超框方式, 名字意象图案, 通用点缀元素]
-source: exports/Prompt列表_导出_2026-06-16/11_拍立得/提示词.md
+source: "licensor-authored private export: Prompt列表_导出_2026-06-16/11_拍立得/提示词.md"
 ```
 
 ## Style Intent

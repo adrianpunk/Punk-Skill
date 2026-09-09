@@ -9,7 +9,7 @@ outputs: [avatar]
 default_ratio: "1:1"
 required_fields: [上传图片]
 optional_fields: []
-source: exports/Prompt列表_导出_2026-06-16/05_像素风头像生成器/提示词.md
+source: "licensor-authored private export: Prompt列表_导出_2026-06-16/05_像素风头像生成器/提示词.md"
 ```
 
 ## Style Intent

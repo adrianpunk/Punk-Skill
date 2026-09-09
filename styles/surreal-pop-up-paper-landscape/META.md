@@ -9,7 +9,7 @@ outputs: [before_after, portrait, editorial_artwork]
 default_ratio: mode-specific
 required_fields: [上传人物照片, 输出模式]
 optional_fields: [画幅比例]
-source: user-contributed prompt and reference image
+source: licensor-authored prompt and licensor-provided reference image
 modes:
   before-after:
     name: 前后对比图

@@ -1,6 +1,6 @@
 # Punk Skill Personal Use License 1.0
 
-Copyright (c) 2026 Adrian Punk. All rights reserved.
+Copyright (c) 2026 庞静雯 (Adrian Punk). All rights reserved.
 
 By exercising any permission granted below, you accept this License. These
 terms are both conditions of the copyright license and contractual
@@ -136,9 +136,9 @@ THE WORK OR ITS USE.
 
 ## 11. Governing law
 
-This License is governed by the laws of `[GOVERNING_LAW]`. The courts or
-arbitration body located in `[DISPUTE_FORUM]` have exclusive jurisdiction,
-except where applicable law requires otherwise.
+This License is governed by the laws of the People's Republic of China. The
+people's courts with jurisdiction at the Licensor's domicile have exclusive
+jurisdiction, except where applicable law requires otherwise.
 
 The controlling language of this License is English. Any translation is for
 convenience only.

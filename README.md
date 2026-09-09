@@ -211,7 +211,7 @@ Use $punk-avatar to create a 立体人物扁平景色纸艺 单张效果图 from
 Punk Skill `v2.0.0` 及后续版本采用双轨授权：
 
 - 个人非商用：可按照 [Punk Skill Personal Use License 1.0](./LICENSE-PERSONAL.md) 免费使用；
-- 商业使用：必须事先取得权利人的书面商业授权，并支付适用的许可费用。申请流程见 [Commercial Licensing](./COMMERCIAL-LICENSE.md)。
+- 商业使用：必须事先取得权利人的书面商业授权，并支付适用的许可费用。申请流程见 [Commercial Licensing](./COMMERCIAL-LICENSE.md)，联系邮箱为 `adrian.pduck@gmail.com`。
 
 企业、机构、工作室、团队、雇员、承包商或客户项目使用，以及收费服务、商业内容、营销、广告、品牌传播、产品或工作流集成，均属于商业使用。内部使用、试用、尚未盈利或没有单独向客户收费，不因此变成个人非商用使用。
 
