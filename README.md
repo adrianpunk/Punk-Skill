@@ -2,6 +2,9 @@
 
 Punk Skill 是一组给 AI Agent 使用的视觉生成 Skills。安装后，可以用它把文章生成封面图，或把人物、宠物、物品照片生成头像图。
 
+> [!IMPORTANT]
+> Punk Skill `v2.0.0` 及后续版本源码公开，个人非商用使用免费。任何企业、机构、工作室、团队、雇员、承包商或客户项目使用，以及用于收费服务、商业内容、营销、广告、品牌传播、产品集成、商业工作流或其他商业目的，均须事先取得书面商业授权并支付许可费用。详见 [使用许可](#license)。
+
 ## 安装
 
 把下面这段话发给支持 Skills 的 AI Agent：
@@ -205,7 +208,16 @@ Use $punk-avatar to create a 立体人物扁平景色纸艺 单张效果图 from
 
 ## License
 
-本仓库内容采用 [MIT License](./LICENSE) 发布；仓库中另有明确授权或声明的第三方素材除外。
+Punk Skill `v2.0.0` 及后续版本采用双轨授权：
+
+- 个人非商用：可按照 [Punk Skill Personal Use License 1.0](./LICENSE-PERSONAL.md) 免费使用；
+- 商业使用：必须事先取得权利人的书面商业授权，并支付适用的许可费用。申请流程见 [Commercial Licensing](./COMMERCIAL-LICENSE.md)。
+
+企业、机构、工作室、团队、雇员、承包商或客户项目使用，以及收费服务、商业内容、营销、广告、品牌传播、产品或工作流集成，均属于商业使用。内部使用、试用、尚未盈利或没有单独向客户收费，不因此变成个人非商用使用。
+
+此前已经按照 MIT License 发布的版本继续适用其原有 MIT License；本次变更不追溯撤销既有授权。历史协议见 [LICENSE-MIT-LEGACY](./LICENSE-MIT-LEGACY)。
+
+第三方素材不因本仓库的许可声明而获得重新授权，详见 [THIRD_PARTY_NOTICES.md](./THIRD_PARTY_NOTICES.md)。
 
 ## 致谢
 
