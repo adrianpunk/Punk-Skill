@@ -18,7 +18,7 @@ See [LICENSE-PERSONAL.md](./LICENSE-PERSONAL.md) for the full definition.
 
 ## Request information
 
-Send the following information to `[COMMERCIAL_LICENSE_EMAIL]`:
+Send the following information to `adrian.pduck@gmail.com`:
 
 - legal name of the licensee;
 - company or registration number, if applicable;

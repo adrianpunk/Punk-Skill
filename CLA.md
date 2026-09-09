@@ -1,7 +1,8 @@
 # Punk Skill Contributor License Agreement 1.0
 
 This Contributor License Agreement (Agreement) is between the contributor
-identified below and `[LICENSOR_LEGAL_NAME]` (Project Owner).
+identified below and Adrian Punk and GitHub
+`@adrianpunk` (Project Owner).
 
 ## 1. Contribution
 
@@ -47,8 +48,9 @@ project records.
 
 ## 6. Governing law
 
-This Agreement is governed by `[GOVERNING_LAW]`, with disputes heard in
-`[DISPUTE_FORUM]`.
+This Agreement is governed by the laws of the People's Republic of China,
+with disputes heard by the people's courts with jurisdiction at the Project
+Owner's domicile.
 
 ## Signatures
 
