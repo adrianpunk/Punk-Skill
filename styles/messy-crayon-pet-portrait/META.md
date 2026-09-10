@@ -9,7 +9,7 @@ outputs: [portrait]
 default_ratio: "4:5"
 required_fields: [上传宠物照片, 宠物名, 画幅比例]
 optional_fields: []
-source: exports/Prompt列表_导出_2026-06-16/08_《宠物手绘肖像指南》/提示词.md
+source: "licensor-authored private export: Prompt列表_导出_2026-06-16/08_《宠物手绘肖像指南》/提示词.md"
 ```
 
 ## Style Intent

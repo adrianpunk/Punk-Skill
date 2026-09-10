@@ -9,7 +9,7 @@ outputs: [portrait]
 default_ratio: "1:1"
 required_fields: [上传照片]
 optional_fields: [指定主题元素]
-source: exports/Prompt列表_导出_2026-06-16/17_《怪诞灵魂手绘》《情绪放大镜》《灵魂小画》《一眼怪像》《手绘本真》/提示词.md
+source: "licensor-authored private export: Prompt列表_导出_2026-06-16/17_《怪诞灵魂手绘》《情绪放大镜》《灵魂小画》《一眼怪像》《手绘本真》/提示词.md"
 ```
 
 ## Style Intent

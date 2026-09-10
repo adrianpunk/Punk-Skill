@@ -1,21 +1,36 @@
-MIT License
+# Punk Skill License
 
-Copyright (c) 2026 adrianpunk
+Copyright (c) 2026 Adrian Punk. All rights reserved.
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+## Current releases
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+Punk Skill version `v2.0.0` and later is source-available under the
+[Punk Skill Personal Use License 1.0](./LICENSE-PERSONAL.md).
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+Personal, non-commercial use by an individual is free. Any commercial use
+requires both:
+
+1. prior written authorization from the Licensor; and
+2. full payment of the applicable commercial license fee.
+
+See [COMMERCIAL-LICENSE.md](./COMMERCIAL-LICENSE.md) for the commercial
+licensing process. That document is an invitation to request a license and
+does not itself grant commercial rights.
+
+## Legacy MIT releases
+
+Versions and copies of Punk Skill that were released under the MIT License
+remain available under the MIT License that accompanied those versions. The
+license change does not revoke or restrict rights already granted for those
+legacy copies.
+
+The last legacy MIT release must be identified in the release history as
+`v1.0.0-mit`. Its license text is preserved in
+[LICENSE-MIT-LEGACY](./LICENSE-MIT-LEGACY).
+
+## Third-party material
+
+Third-party material is not relicensed by this file. See
+[THIRD_PARTY_NOTICES.md](./THIRD_PARTY_NOTICES.md). Where a file-specific
+notice conflicts with this file, the file-specific notice controls for that
+material.
