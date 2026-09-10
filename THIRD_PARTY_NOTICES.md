@@ -26,9 +26,9 @@ personal-use and paid-commercial licensing model.
 
 | Contributor | Affected material | Existing basis | Required record for `v2.0.0` | Status |
 | --- | --- | --- | --- | --- |
-| [`jinchenma94`](https://github.com/jinchenma94) (`jinchenma`) | Foundational skill files, scripts, styles, documentation, and example images across 32 commits | Historical MIT release and Git history | Signed CLA or equivalent written commercial-relicensing permission | Pending |
-| [`ozrwayne`](https://github.com/ozrwayne) (`Roland`) | Anthropic Research and Kimi styles and images; license-upgrade PR text | Historical MIT terms for merged contributions; current PR is unmerged | Signed CLA or equivalent written commercial-relicensing permission | Pending |
-| [`cq060806-sudo`](https://github.com/cq060806-sudo) (`Shengtaispa`) | Validation-script fixes merged in PR #1 | Historical MIT release and Git history | Signed CLA or equivalent written commercial-relicensing permission, or keep the affected lines under MIT | Pending |
+| [`jinchenma94`](https://github.com/jinchenma94) (`jinchenma`) | Foundational skill files, scripts, styles, documentation, and example images across 32 commits | Historical MIT release and Git history | Written CLA confirmation received by email on 2026-09-10 | Confirmed; retain the original email and signed CLA attachment in the private records archive |
+| [`ozrwayne`](https://github.com/ozrwayne) (`Roland`) | Anthropic Research and Kimi styles and images; license-upgrade PR text | Historical MIT terms for merged contributions; current PR is unmerged | Written CLA confirmation and electronic signature received by email on 2026-09-10 | Confirmed; retain the original email in the private records archive |
+| [`cq060806-sudo`](https://github.com/cq060806-sudo) (`Shengtaispa`) | Validation-script fixes merged in PR #1 | PR #1 was reverted by PR #10; no affected contribution remains in the current v2 work | No v2 relicensing record required while the reverted material stays excluded | Reverted and excluded from `v2.0.0` |
 
 ## Required review items
 
