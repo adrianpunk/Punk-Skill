@@ -1,7 +1,7 @@
 # Punk Skill Contributor License Agreement 1.0
 
 This Contributor License Agreement (Agreement) is between the contributor
-identified below and 庞静雯, also known as Adrian Punk and GitHub
+identified below and Adrian Punk and GitHub
 `@adrianpunk` (Project Owner).
 
 ## 1. Contribution

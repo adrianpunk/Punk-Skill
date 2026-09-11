@@ -1,6 +1,6 @@
 # Punk Skill Personal Use License 1.0
 
-Copyright (c) 2026 庞静雯 (Adrian Punk). All rights reserved.
+Copyright (c) 2026 Adrian Punk. All rights reserved.
 
 By exercising any permission granted below, you accept this License. These
 terms are both conditions of the copyright license and contractual
