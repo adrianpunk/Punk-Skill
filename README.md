@@ -99,6 +99,7 @@ Use $punk-cover to create prompt-only output for this X cover, style 黑白灰�
 | 品牌协同连接 | `brand-collaboration-connection` | 品牌联动、工具集成、自动化工作流、产品教程和企业级连接封面 |
 | Anthropic Research 风格 | `anthropic-research-style` | AI、研究、知识、系统和设计主题的极简编辑封面 |
 | kimi风格 | `kimi-stlye` | AI、研究、产品、材料和创意项目的俯视档案桌封面 |
+| 极简轻科技 | `minimal-light-tech` | 科技产品、工具教程、品牌概念和轻科技主题的纯白留白封面 |
 | 极简视觉隐喻风 | `minimal-visual-metaphor` | AI、商业科技、产品、组织和系统变化的极简实体隐喻封面 |
 
 ### 风格样例
@@ -127,6 +128,8 @@ Use $punk-cover to create prompt-only output for this X cover, style 黑白灰�
 | 复古日本科幻动画 | 法式极简墨线海报 | 品牌协同连接 |
 | ![Anthropic Research 风格](./screenshots/punk-cover-styles/anthropic-research-style.png) | ![kimi风格](./screenshots/punk-cover-styles/kimi-stlye.png) | ![极简视觉隐喻风](./screenshots/punk-cover-styles/minimal-visual-metaphor.png) |
 | Anthropic Research 风格 | kimi风格 | 极简视觉隐喻风 |
+| ![极简轻科技](./screenshots/punk-cover-styles/minimal-light-tech.png) | | |
+| 极简轻科技 | | |
 
 ## punk-avatar
 
