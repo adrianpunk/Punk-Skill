@@ -8,6 +8,7 @@
 - `skills/punk-cover/SKILL.md`：技能的主要行为规范和工作流，是最重要的修改入口。
 - `skills/punk-cover/agents/openai.yaml`：面向 Agent 的配置文件。
 - `skills/punk-cover/references/style-catalog.md`：封面风格目录。
+- `skills/punk-cover/references/platform-catalog.md`：多语言平台选项和请求比例到生图比例的解析规则。
 - `skills/punk-cover/references/cover-prompt-blueprint.md`：封面最终提示词的通用组装骨架。
 - `styles/{style-id}/META.md`：风格元数据、适用范围、推荐依据和封面适配规则。
 - `styles/{style-id}/STYLE.md`：可复用视觉风格正文。

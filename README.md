@@ -2,6 +2,9 @@
 
 Punk Skill 是一组给 AI Agent 使用的视觉生成 Skills。安装后，可以用它把文章生成封面图，或把人物、宠物、物品照片生成头像图。
 
+> [!IMPORTANT]
+> Punk Skill `v2.0.0` 及后续版本源码公开，个人非商用使用免费。任何企业、机构、工作室、团队、雇员、承包商或客户项目使用，以及用于收费服务、商业内容、营销、广告、品牌传播、产品集成、商业工作流或其他商业目的，均须事先取得书面商业授权并支付许可费用。详见 [使用许可](#license)。
+
 ## 安装
 
 把下面这段话发给支持 Skills 的 AI Agent：
@@ -28,6 +31,16 @@ Use $punk-avatar ...
 
 `punk-cover` 用来把文章、笔记、推文、主题草稿生成一张封面图。适合小红书、微信公众号、X / Twitter，以及其他需要封面视觉的内容。
 
+### 多语言与全球平台
+
+`punk-cover` 会根据宿主系统语言自动进入中文或 English 模式：中文系统显示中文的平台和风格选项，其他系统显示英文选项。也可以在请求中明确指定 `中文`、`English` 或 `中英双语`。语言模式会影响交互文案、提示词、标题/副标题和辅助文字；用户原始标题与专有名词默认保持不变。
+
+可选平台包括小红书、微信公众号、X、Instagram、Facebook、LinkedIn、YouTube、TikTok、Pinterest、Snapchat、Reddit、Threads、Bluesky 和 Medium。完整映射见 [`platform-catalog.md`](./skills/punk-cover/references/platform-catalog.md)。
+
+当前生图工具只支持 `1:1`、`2:3`、`3:2`、`4:3`、`3:4`、`9:16`、`16:9`、`21:9`。当平台或自定义请求比例不受支持时，Skill 会明确说明“只能生成最接近的比例”，自动使用最近的支持比例：X 的 `5:2` 和微信公众号的 `2.35:1` 都使用 `21:9`。这只是生图工具的比例限制，不宣称符合任何平台的封面尺寸标准。
+
+`punk-cover` supports the same global platform set in English mode. If a requested ratio is not supported by the image tool, it states that only the closest supported ratio can be generated and uses it automatically. For example, X `5:2` and WeChat public account `2.35:1` both resolve to `21:9`.
+
 ### 使用示例
 
 只给文章内容：
@@ -44,6 +57,14 @@ Use $punk-cover to create a cover image for this article:
 Use $punk-cover to create a WeChat public account cover in 商业杂志头版 style:
 
 这里粘贴文章内容
+```
+
+英文系统或明确指定 English 模式：
+
+```text
+Use $punk-cover in English mode to create an Instagram Reels cover in Minimal Light Tech style:
+
+How AI agents are changing creative work
 ```
 
 指定自定义比例：
@@ -63,6 +84,8 @@ Use $punk-cover to create prompt-only output for this X cover, style 黑白灰�
 ```
 
 ### 可用风格
+
+风格 ID 在两种语言模式下保持一致；中文/英文显示名与用途说明见 [`style-catalog.md`](./skills/punk-cover/references/style-catalog.md)。
 
 | 风格 | Style ID | 适合内容 |
 | --- | --- | --- |
@@ -96,6 +119,7 @@ Use $punk-cover to create prompt-only output for this X cover, style 黑白灰�
 | 品牌协同连接 | `brand-collaboration-connection` | 品牌联动、工具集成、自动化工作流、产品教程和企业级连接封面 |
 | Anthropic Research 风格 | `anthropic-research-style` | AI、研究、知识、系统和设计主题的极简编辑封面 |
 | kimi风格 | `kimi-stlye` | AI、研究、产品、材料和创意项目的俯视档案桌封面 |
+| 极简轻科技 | `minimal-light-tech` | 科技产品、工具教程、品牌概念和轻科技主题的纯白留白封面 |
 | 极简视觉隐喻风 | `minimal-visual-metaphor` | AI、商业科技、产品、组织和系统变化的极简实体隐喻封面 |
 
 ### 风格样例
@@ -124,6 +148,8 @@ Use $punk-cover to create prompt-only output for this X cover, style 黑白灰�
 | 复古日本科幻动画 | 法式极简墨线海报 | 品牌协同连接 |
 | ![Anthropic Research 风格](./screenshots/punk-cover-styles/anthropic-research-style.png) | ![kimi风格](./screenshots/punk-cover-styles/kimi-stlye.png) | ![极简视觉隐喻风](./screenshots/punk-cover-styles/minimal-visual-metaphor.png) |
 | Anthropic Research 风格 | kimi风格 | 极简视觉隐喻风 |
+| ![极简轻科技](./screenshots/punk-cover-styles/minimal-light-tech.png) | | |
+| 极简轻科技 | | |
 
 ## punk-avatar
 
@@ -205,7 +231,16 @@ Use $punk-avatar to create a 立体人物扁平景色纸艺 单张效果图 from
 
 ## License
 
-本仓库内容采用 [MIT License](./LICENSE) 发布；仓库中另有明确授权或声明的第三方素材除外。
+Punk Skill `v2.0.0` 及后续版本采用双轨授权：
+
+- 个人非商用：可按照 [Punk Skill Personal Use License 1.0](./LICENSE-PERSONAL.md) 免费使用；
+- 商业使用：必须事先取得权利人的书面商业授权，并支付适用的许可费用。申请流程见 [Commercial Licensing](./COMMERCIAL-LICENSE.md)，联系邮箱为 `adrian.pduck@gmail.com`。
+
+企业、机构、工作室、团队、雇员、承包商或客户项目使用，以及收费服务、商业内容、营销、广告、品牌传播、产品或工作流集成，均属于商业使用。内部使用、试用、尚未盈利或没有单独向客户收费，不因此变成个人非商用使用。
+
+此前已经按照 MIT License 发布的版本继续适用其原有 MIT License；本次变更不追溯撤销既有授权。历史协议见 [LICENSE-MIT-LEGACY](./LICENSE-MIT-LEGACY)。
+
+第三方素材不因本仓库的许可声明而获得重新授权，详见 [THIRD_PARTY_NOTICES.md](./THIRD_PARTY_NOTICES.md)。
 
 ## 致谢
 

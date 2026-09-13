@@ -1,6 +1,6 @@
 ---
 name: punk-cover
-description: Generate cover images and reusable image prompts from the shared Punk style library for articles, Xiaohongshu notes, WeChat public account posts, X posts, topic drafts, and requests for covers, social cover images, poster prompts, style-template-based image prompts, or image generation from long-form text. Use this skill to analyze source content, confirm platform/aspect ratio and visual style, save the final prompt, and generate the image when an image-generation tool is available.
+description: Generate localized cover images and reusable image prompts from the shared Punk style library for articles, Xiaohongshu notes, WeChat public account posts, X posts, Instagram, Facebook, LinkedIn, YouTube, TikTok, Pinterest, Snapchat, Reddit, Threads, Bluesky, Medium, topic drafts, and requests for covers, social cover images, poster prompts, style-template-based image prompts, or image generation from long-form text. Use this skill to analyze source content, resolve unsupported ratios to the closest available generation ratio, select a localized visual style, save the final prompt, and generate the image when an image-generation tool is available.
 ---
 
 # Punk Cover
@@ -9,11 +9,19 @@ description: Generate cover images and reusable image prompts from the shared Pu
 
 `punk-cover` is a cover-generation workflow, not a style owner. Select exactly one reusable style from the repository-level `styles/` library, then compile that style atom into the cover shape.
 
+The workflow is localized. Detect the host system language/locale before
+presenting choices: use Chinese mode for `zh`, `zh-CN`, `zh-TW`, or another
+Chinese locale; use English mode for other locales. The user may explicitly
+override this with `中文`, `English`, or `中英双语`. In the selected mode,
+localize platform labels, style names, questions, notices, and generated
+supporting text. The source title and any user-provided proper nouns remain
+unchanged unless the user asks for translation.
+
 The final image prompt is not a loose concatenation of "cover instructions + style instructions". It must be one integrated, cover-specific prompt that applies the selected style to the cover format.
 
 Use three inputs:
 
-1. `punk-cover` task fields: platform, aspect ratio, optional output dimensions and output mode, title clarity, article summarization, cover communication goals, and universal output constraints.
+1. `punk-cover` task fields: platform, requested aspect ratio, resolved generation ratio, language mode, optional output dimensions and output mode, title clarity, article summarization, cover communication goals, and universal output constraints.
 2. The selected style's `META.md` metadata and `STYLE.md` reusable visual style atom.
 3. `references/cover-prompt-blueprint.md`, which defines the full cover prompt shape.
 
@@ -22,6 +30,7 @@ The style file defines the reusable visual language. The cover blueprint defines
 ## Resources
 
 - Read `references/style-catalog.md` to list or choose cover styles.
+- Read `references/platform-catalog.md` before presenting platform choices or resolving an aspect ratio.
 - Read `references/cover-prompt-blueprint.md` before composing the final prompt.
 - For the selected style, read both:
   - `../../styles/{style-id}/META.md`
@@ -40,20 +49,28 @@ The style file defines the reusable visual language. The cover blueprint defines
    - Convert long source material into concise derived fields: title/topic, 1-3 sentence context summary, visual subject, audience, mood, metaphor, and banned elements.
 
 2. Confirm platform and aspect ratio before generating any prompt:
-   - Xiaohongshu: `3:4`
-   - WeChat public account: `2.35:1`
-   - X: `5:2`
-   - Custom: keep the user's ratio exactly.
+   - Resolve the language mode from the host system before presenting this localized menu.
+   - Use `references/platform-catalog.md` for the localized platform menu and the complete platform-to-ratio mapping.
+   - Keep both the user's requested ratio and the resolved generation ratio in the task fields.
+   - For an unsupported requested ratio, automatically resolve to the numerically closest supported generation ratio. State in the active language mode that only the closest ratio can be generated, then use that resolved ratio directly; do not ask the user to choose another ratio.
+   - The X request `5:2` resolves to `21:9`.
+   - The WeChat public account request `2.35:1` resolves to `21:9`.
+   - Custom supported ratios are preserved; custom unsupported ratios use the same nearest-ratio rule.
    - If the user only provides source content, ask which platform they want to publish to. Do not generate the prompt yet.
-   - If the user provides a custom ratio, use it and do not ask for platform unless the platform matters for wording.
+   - If the user provides a custom ratio, resolve it as above and do not ask for platform unless the platform matters for wording.
    - If the user provides exact width × height without a ratio, derive and preserve that ratio. If explicit dimensions and an explicit ratio conflict, ask which one should control before generating.
    - Default to a single image. If the user explicitly requests a multi-size suite, preserve every requested ratio or output dimension and require at least two targets before generation.
    - Never satisfy a multi-size request by cropping, stretching, padding, or placing multiple ratios in one grid; compile one independently composed prompt per target ratio.
    - Only skip this question when the user has already provided a platform, a ratio, or explicitly says to decide everything automatically.
 
 3. Confirm style before generating any prompt:
+   - Use the language mode already resolved from the host system language/locale; accept an explicit user override.
+   - When presenting style choices, show only the localized `Style name` and `Best for` content for the active mode. Do not show Chinese and English menu copies together unless the user selects bilingual mode or asks for both.
+   - In Chinese mode, use the Chinese style names and explanations from `references/style-catalog.md`; in English mode, use the English equivalents. The style ID remains unchanged in both modes.
+   - Accept a style ID or either localized display name as an unambiguous style selection.
+   - The language mode controls the prompt, title/subtitle treatment, labels, questions, and supporting text. It does not translate user text without permission.
    - If the user specifies one catalog style, use it.
-   - If the user supplies a complete visual direction that matches a catalog style, including the `复古时代错位编辑封面` brief, a “超大标题 × 中央视觉主体 × 图文穿插” brief, a “真实纸雕层叠 × 极简留白 × 柔和光影 × 准确隐喻” brief, a “真实纸张质感 × 击凸压凹 × 文字构图 × 克制视觉隐喻” brief, an “抽象概念 → 具体场景 → 游戏机制 → 像素视觉隐喻” brief, an “OSB 木板 × 工业蓝标识字 × 极简线条隐喻” brief, or a “黑白复古蚀刻版画 × 排线交叉排线 × 单一超现实隐喻” brief, treat that style as specified and use the matching `META.md` and `STYLE.md` without asking the user to repeat the style.
+   - If the user supplies a complete visual direction that matches a catalog style, including the `复古时代错位编辑封面` brief, a “超大标题 × 中央视觉主体 × 图文穿插” brief, a “真实纸雕层叠 × 极简留白 × 柔和光影 × 准确隐喻” brief, a “真实纸张质感 × 击凸压凹 × 文字构图 × 克制视觉隐喻” brief, an “抽象概念 → 具体场景 → 游戏机制 → 像素视觉隐喻” brief, an “OSB 木板 × 工业蓝标识字 × 极简线条隐喻” brief, or a “黑白复古蚀刻版画 × 排线交叉排线 × 单一超现实隐喻” brief, or a “极简轻科技 × 纯白留白 × 单一渐变锚点 × 现代黑体标题” brief, treat that style as specified and use the matching `META.md` and `STYLE.md` without asking the user to repeat the style.
    - If no style is specified, recommend exactly three eligible catalog styles based on the content and give a one-sentence reason for each, then ask the user to choose one or provide a custom style direction.
    - Do not show all eligible styles by default unless the user asks for the full menu.
    - Only auto-select one style when the user explicitly says to decide everything automatically, not merely because they provided an article.
@@ -73,7 +90,7 @@ The style file defines the reusable visual language. The cover blueprint defines
    - Every cover decision must be expressed through the selected style. For example, if the style is torn collage, the title, subject, support text, background, and metaphor must be implemented as torn paper, old newspaper, tape, grain, halftone, and paper layers; not as a generic cover with collage words appended.
    - Do not append the raw `STYLE.md` content as a standalone second section. Rewrite and adapt its style atoms into the cover blueprint.
    - Do not combine multiple styles or add a second custom style section.
-   - Replace or resolve all explicit placeholders such as `{{主题词}}`, `{{副标题，可留空}}`, `{{画幅比例...}}`, `{{语言...}}`, `{{用途...}}`, `{{补充背景，可留空}}`, `{{情绪倾向...}}`, `{{不想出现的元素，可留空}}`, and any other `{{...}}` fields.
+   - Replace or resolve all explicit placeholders such as `{{主题词}}`, `{{副标题，可留空}}`, `{{画幅比例...}}`, `{{请求比例...}}`, `{{生成比例...}}`, `{{语言...}}`, `{{用途...}}`, `{{补充背景，可留空}}`, `{{情绪倾向...}}`, `{{不想出现的元素，可留空}}`, and any other `{{...}}` fields.
    - If a needed detail has no matching placeholder, merge it into the nearest cover section such as `补充语境`, `风格落地方式`, or `禁用元素`.
    - For long articles, fill title/topic fields with concise derived titles or title layers, not the article text.
    - Put only summarized context into the prompt; do not paste the original article body into the final prompt.
@@ -93,19 +110,17 @@ The style file defines the reusable visual language. The cover blueprint defines
 
 ## First Response Format
 
-For article-only input with no platform and no style, ask concisely:
+For article-only input with no platform and no style, ask concisely in the active language mode:
 
 1. Which platform/aspect ratio should this cover target?
-   - Xiaohongshu: `3:4`
-   - WeChat public account: `2.35:1`
-   - X: `5:2`
-   - Custom: provide the ratio
+   - Show the localized platform menu from `references/platform-catalog.md`.
+   - Make clear that unsupported requests such as X `5:2` and WeChat `2.35:1` can only use the closest supported ratio (`21:9`), which will be applied automatically.
 2. Recommended styles:
    - `Style A`: reason tied to the article.
    - `Style B`: reason tied to the article.
    - `Style C`: reason tied to the article.
 
-End by asking the user to choose a platform and one style, or to say "auto" if they want the skill to decide everything.
+End by asking the user to choose a platform and one style, or to say `auto` if they want the skill to decide everything. They may also choose `中文`, `English`, or `中英双语` as the language mode.
 
 ## Style Selection Heuristics
 
@@ -130,11 +145,16 @@ Use `references/cover-prompt-blueprint.md` as the full prompt structure. The blo
 ```text
 # punk-cover cover task instructions
 
-Create one single cover image for {platform}. Aspect ratio: {ratio}.
+Create one single cover image for {platform}. Requested aspect ratio:
+{requested_ratio}. Generation aspect ratio: {generation_ratio}.
+{ratio_resolution_notice}
 
 Use the following derived content only:
 - Title/topic: {title_or_topic}
 - Optional subtitle: {subtitle}
+- Language mode: {language_mode}
+- Requested aspect ratio: {requested_ratio}
+- Generation aspect ratio: {generation_ratio}
 - Short context summary: {summary}
 - Visual subject: {visual_subject}
 - Audience: {audience}

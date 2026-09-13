@@ -1,4 +1,4 @@
 interface:
   display_name: "Punk Cover"
-  short_description: "Generate cover images from curated visual templates"
-  default_prompt: "Use $punk-cover to turn this article or topic into a cover image."
+  short_description: "Generate localized cover images for global social platforms"
+  default_prompt: "Use $punk-cover to turn this article or topic into a cover image. Detect the system language, offer the matching localized platform and style choices, and use the closest supported image ratio when needed."
