@@ -6,6 +6,7 @@ const scriptDir = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(scriptDir, "..");
 const skillPath = path.join(root, "skills", "punk-cover", "SKILL.md");
 const blueprintPath = path.join(root, "skills", "punk-cover", "references", "cover-prompt-blueprint.md");
+const platformCatalogPath = path.join(root, "skills", "punk-cover", "references", "platform-catalog.md");
 const stylesDir = path.join(root, "styles");
 
 const requiredStyleFields = [
@@ -34,7 +35,12 @@ if (!fs.existsSync(blueprintPath)) {
   fail(`Missing cover prompt blueprint: ${path.relative(root, blueprintPath)}`);
 }
 
+if (!fs.existsSync(platformCatalogPath)) {
+  fail(`Missing platform catalog: ${path.relative(root, platformCatalogPath)}`);
+}
+
 const skill = read(skillPath);
+const platformCatalog = fs.existsSync(platformCatalogPath) ? read(platformCatalogPath) : "";
 const skillChecks = [
   {
     label: "compile that style atom into the cover shape",
@@ -49,11 +55,44 @@ const skillChecks = [
     test: (text) =>
       /Do not append (the )?raw [`\w.-]+ content as a standalone second section/.test(text),
   },
+  {
+    label: "localized language mode",
+    test: (text) =>
+      text.includes("host system language/locale") &&
+      text.includes("中文") &&
+      text.includes("English"),
+  },
+  {
+    label: "automatic nearest-ratio resolution",
+    test: (text) =>
+      text.includes("automatically resolve to the numerically closest") &&
+      text.includes("do not ask the user to choose another ratio"),
+  },
+  {
+    label: "platform catalog reference",
+    test: (text) => text.includes("references/platform-catalog.md"),
+  },
 ];
 
 for (const check of skillChecks) {
   if (!check.test(skill)) {
     fail(`SKILL.md missing required compile rule phrase: ${check.label}`);
+  }
+}
+
+const platformChecks = [
+  ["supported generation ratios", "Supported generation ratios"],
+  ["X requested ratio", "5:2"],
+  ["WeChat requested ratio", "2.35:1"],
+  ["closest-ratio disclosure", "Only the closest supported ratio can be generated"],
+  ["X resolved ratio", "| X | `5:2` | `21:9` |"],
+  ["WeChat resolved ratio", "| 微信公众号 | WeChat public account | `2.35:1` | `21:9` |"],
+  ["global platform option", "Instagram"],
+];
+
+for (const [label, phrase] of platformChecks) {
+  if (!platformCatalog.includes(phrase)) {
+    fail(`Platform catalog missing ${label}: ${phrase}`);
   }
 }
 

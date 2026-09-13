@@ -4,6 +4,12 @@ Use these user-visible style names. This catalog references reusable style atoms
 
 Do not copy prompt bodies into this catalog. Read the selected style's `META.md` and `STYLE.md` after the user chooses a style.
 
+The table below is the source list. Render only one localized menu at runtime:
+Chinese mode uses the Chinese name and Chinese use case from the localization
+table; English mode uses the English name and the English `Best For` text in the
+source list. Keep the style ID unchanged so either mode resolves to the same
+style atom.
+
 | Style | Style ID | Metadata | Style | Best For |
 | --- | --- | --- | --- | --- |
 | 黑白极简概念 | `black-white-minimal-concept` | `styles/black-white-minimal-concept/META.md` | `styles/black-white-minimal-concept/STYLE.md` | Abstract, editorial, philosophical, strategic, restrained covers with strong typography and visual metaphor. |
@@ -38,6 +44,43 @@ Do not copy prompt bodies into this catalog. Read the selected style's `META.md`
 | kimi风格 | `kimi-stlye` | `styles/kimi-stlye/META.md` | `styles/kimi-stlye/STYLE.md` | AI, research, products, materials, systems, and creative projects needing a top-down archival still life on a pale gray-green light table. |
 | 极简轻科技 | `minimal-light-tech` | `styles/minimal-light-tech/META.md` | `styles/minimal-light-tech/STYLE.md` | Clean light-tech product and tutorial covers with large white space, one soft gradient/glass or lightly dimensional logo anchor, and ultra-bold black Chinese sans title. |
 | 极简视觉隐喻风 | `minimal-visual-metaphor` | `styles/minimal-visual-metaphor/META.md` | `styles/minimal-visual-metaphor/STYLE.md` | Business technology, AI, products, organizations, workflows, and system change needing one quiet physical action metaphor with premium editorial restraint. |
+
+## Localized menu labels
+
+| Style ID | English mode display name | 中文模式适用内容 |
+| --- | --- | --- |
+| `black-white-minimal-concept` | Black-and-White Minimal Concept | 抽象观点、编辑、哲学、战略和克制的视觉隐喻封面。 |
+| `black-white-etching-editorial-cover` | Black-and-White Vintage Etching Editorial Cover | 黑白蚀刻、铜版画、木刻、古典科学插图、超现实编辑和哲学主题。 |
+| `semantic-minimal-translation` | Semantic Minimal Translation | 单词、短句、口号或需要极简视觉转译的概念。 |
+| `retro-torn-collage` | Retro Torn-Paper Collage | 社交传播、文化议题、争议、成长、街头感和复古编辑主题。 |
+| `block-world` | Block World | 教程、工具、系统搭建、升级、学习和游戏化主题。 |
+| `giant-perspective-chinese-title` | Giant Perspective Chinese Title | 中文标题主导、强冲击、空间纵深、速度、冲突和活动海报主题。 |
+| `interleaved-title-editorial-poster` | Interleaved Oversized Title Editorial Poster | 单一主体、超大短标题、前后景图文穿插和现代编辑海报主题。 |
+| `layered-paper-cut-concept-poster` | Layered Paper-Cut Concept Poster | 关系、张力、变化和准确空间隐喻的立体纸雕概念。 |
+| `paper-emboss-deboss-cover` | Embossed/Debossed Paper Cover | 艺术书、独立杂志、纸张浮雕、文字构图和克制隐喻。 |
+| `godot-2d-pixel-metaphor-poster` | Godot 2D Pixel Metaphor Poster | 抽象主题、游戏机制、角色动作、目标或阻碍组成的像素关卡。 |
+| `osb-industrial-blue-line-metaphor` | OSB Industrial Blue Line Metaphor | 工作、组织、效率、工具、关系、路径和连接主题的材料隐喻。 |
+| `brick-world` | Brick World | 搭建、团队、计划、教育、亲子和系统隐喻。 |
+| `consulting-report-visual` | Consulting Report Visual | 商业策略、方法论、运营、产品思维、咨询和结构化分析。 |
+| `research-journal-concept` | Research Journal Concept | 科研、医学、材料、生物、机制和实验室主题。 |
+| `retro-diffuse-gradient` | Retro Diffuse Gradient | 艺术、设计、音乐、品牌、情绪和独立杂志主题。 |
+| `midcentury-surreal-editorial-cover` | Mid-Century Surreal Editorial Cover | AI、编码、数字工作、未来工具和时代错位隐喻。 |
+| `minimal-public-space-photography` | Minimal Public-Space Photography | 观点长文、文化观察、空间秩序和个体空间隐喻。 |
+| `business-magazine-front-page` | Business Magazine Front Page | 商业、科技、AI、创业、投资和趋势分析。 |
+| `black-white-gray-avant-geometry` | Black-and-White-and-Gray Avant-Garde Geometry | 实验性、现代主义、几何构成和强对比主题。 |
+| `black-red-silhouette` | Black-and-Red Silhouette | 工具教程、AI 工作流、金融、速度、电影和直接隐喻。 |
+| `avant-retro-architecture-poster` | Avant-Retro Architecture Poster | 建筑、地标、城市、旅行、展览和空间文化。 |
+| `retro-ink-dot-matrix-metaphor` | Retro Ink Dot-Matrix Metaphor | AI、科技、系统、研究和抽象观点的复古印刷隐喻。 |
+| `black-midcentury-modernist-cover` | Black Mid-Century Modernist Cover | 复古高级、服务场景、产品、人物、建筑和概念主题。 |
+| `silver-foil-blue-minimal` | Silver Foil Blue Minimal | 成长路径、方法论、商业系统、AI 工具和抽象观点。 |
+| `color-neo-constructivist-megastructure-poster` | Color Neo-Constructivist Megastructure Poster | 热点事件、体育、产品发布、城市、科技和强冲击主题。 |
+| `retro-japanese-sci-fi-anime-cover` | Retro Japanese Sci-Fi Anime Cover | AI、科技、系统、心理、社会和方法论的高能封面。 |
+| `french-minimal-ink-poster` | French Minimal Ink Poster | 安静编辑、AI、科技、关系、社会系统和抽象观点。 |
+| `brand-collaboration-connection` | Brand Collaboration Connection | 品牌联动、工具集成、自动化工作流、产品教程和企业连接。 |
+| `anthropic-research-style` | Anthropic Research Style | AI、研究、知识、系统和设计主题的安静编辑封面。 |
+| `kimi-stlye` | Kimi Style | AI、研究、产品、材料、系统和创意项目的俯视档案桌。 |
+| `minimal-light-tech` | Minimal Light Tech | 轻科技、工具、产品和教程的纯白留白与渐变锚点。 |
+| `minimal-visual-metaphor` | Minimal Visual Metaphor | 商业科技、AI、产品、组织、工作流和系统变化。 |
 
 ## Non-Cover Style Atoms
 

@@ -6,6 +6,11 @@ This blueprint defines the complete cover-prompt shape used by `punk-cover`.
 
 Do not paste this blueprint verbatim with empty placeholders. Fill it with derived article fields and selected style anchors.
 
+Compile the prompt in the resolved language mode (`Chinese`, `English`, or
+`Bilingual`). The prompt's interface text, instructions, labels, and
+supporting text must use that mode. Preserve the user's original title and
+proper nouns unless translation was explicitly requested.
+
 ## Required Final Prompt Structure
 
 ```text
@@ -13,7 +18,9 @@ Do not paste this blueprint verbatim with empty placeholders. Fill it with deriv
 
 You are a top-tier cover art director, editorial visual designer, typography designer, and image-generation prompt director.
 
-Create one single {platform} cover image with aspect ratio {ratio}.
+Create one single {platform} cover image with generation aspect ratio {generation_ratio}.
+Requested publishing ratio: {requested_ratio}.
+{ratio_resolution_notice}
 
 The cover must use the selected visual style: {style name} / {style id}.
 This style is not a decorative filter. Every major cover decision must be implemented through this style's visual language.
@@ -26,10 +33,12 @@ This style is not a decorative filter. Every major cover decision must be implem
   - B-layer / complete title: {complete_title}
   - C-layer / subtitle or small text: {subtitle}
 - Platform: {platform}
-- Aspect ratio: {ratio}
+- Requested aspect ratio: {requested_ratio}
+- Generation aspect ratio: {generation_ratio}
+- Ratio resolution notice: {ratio_resolution_notice}
 - Output dimensions: {output_dimensions_or_auto}
 - Output mode: {single_image_or_one_member_of_multi_size_suite}
-- Language: {language}
+- Language mode: {language_mode}
 - Use case: {use_case}
 - Short context summary: {summary}
 - Visual subject: {visual_subject}
@@ -110,7 +119,12 @@ Use typography appropriate to {style name}.
 
 Rules:
 
-- Preserve correct Chinese characters.
+- Render the title and supporting text in {language_mode}. In Chinese mode,
+  preserve correct Chinese characters; in English mode, use accurate English
+  text; in bilingual mode, keep both language layers intentional and concise.
+- Preserve user-provided title wording unless translation was requested. If a
+  translated title is supplied or requested, use it as the language-mode title
+  and retain the original only as a deliberate secondary language layer.
 - Keep the main title readable.
 - Do not crop, misspell, or over-distort key text.
 - Use only a small amount of supporting text.
@@ -145,17 +159,24 @@ Do not output explanations, alternatives, grids, contact sheets, or multi-option
 
 The final image must satisfy all of these:
 
-1. It is clearly a {platform} cover at {ratio}.
-2. It communicates the article topic quickly.
-3. It uses the selected style as the visible organizing language.
-4. The main title is readable and accurate.
-5. The visual metaphor is present and style-native.
-6. The result has the completeness and specificity of a legacy full cover prompt, while keeping the selected style reusable as an independent atom.
+1. It is clearly a {platform} cover composed at {generation_ratio}.
+2. It uses the resolved generation ratio {generation_ratio}; if that differs
+   from {requested_ratio}, the ratio limitation is disclosed and the image is
+   not described as matching a platform standard.
+3. It communicates the article topic quickly.
+4. It uses the selected style as the visible organizing language.
+5. The main title is readable and accurate.
+6. The visual metaphor is present and style-native.
+7. The result has the completeness and specificity of a legacy full cover prompt, while keeping the selected style reusable as an independent atom.
 ```
 
 ## Compilation Notes
 
 - Rewrite the blueprint into a natural final prompt. Do not leave meta-instructions like `{primary_visual_center}` unresolved.
+- If `{requested_ratio}` and `{generation_ratio}` differ, retain the explicit
+  active-language notice that only the closest supported ratio can be
+  generated, and use `{generation_ratio}` for composition and image-tool
+  parameters.
 - For a multi-size suite, compile this blueprint once per target ratio or dimension. Each compiled prompt must request exactly one independently composed image and identify its target dimensions; do not ask one prompt to create a grid or contact sheet.
 - Preserve the suite's content, metaphor, style identity, material, and palette across targets, while recomposing scale, typography, whitespace, reading direction, and spatial behavior for each ratio.
 - Use the selected `META.md` metadata when it provides structured fields.

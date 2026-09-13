@@ -31,6 +31,16 @@ Use $punk-avatar ...
 
 `punk-cover` 用来把文章、笔记、推文、主题草稿生成一张封面图。适合小红书、微信公众号、X / Twitter，以及其他需要封面视觉的内容。
 
+### 多语言与全球平台
+
+`punk-cover` 会根据宿主系统语言自动进入中文或 English 模式：中文系统显示中文的平台和风格选项，其他系统显示英文选项。也可以在请求中明确指定 `中文`、`English` 或 `中英双语`。语言模式会影响交互文案、提示词、标题/副标题和辅助文字；用户原始标题与专有名词默认保持不变。
+
+可选平台包括小红书、微信公众号、X、Instagram、Facebook、LinkedIn、YouTube、TikTok、Pinterest、Snapchat、Reddit、Threads、Bluesky 和 Medium。完整映射见 [`platform-catalog.md`](./skills/punk-cover/references/platform-catalog.md)。
+
+当前生图工具只支持 `1:1`、`2:3`、`3:2`、`4:3`、`3:4`、`9:16`、`16:9`、`21:9`。当平台或自定义请求比例不受支持时，Skill 会明确说明“只能生成最接近的比例”，自动使用最近的支持比例：X 的 `5:2` 和微信公众号的 `2.35:1` 都使用 `21:9`。这只是生图工具的比例限制，不宣称符合任何平台的封面尺寸标准。
+
+`punk-cover` supports the same global platform set in English mode. If a requested ratio is not supported by the image tool, it states that only the closest supported ratio can be generated and uses it automatically. For example, X `5:2` and WeChat public account `2.35:1` both resolve to `21:9`.
+
 ### 使用示例
 
 只给文章内容：
@@ -47,6 +57,14 @@ Use $punk-cover to create a cover image for this article:
 Use $punk-cover to create a WeChat public account cover in 商业杂志头版 style:
 
 这里粘贴文章内容
+```
+
+英文系统或明确指定 English 模式：
+
+```text
+Use $punk-cover in English mode to create an Instagram Reels cover in Minimal Light Tech style:
+
+How AI agents are changing creative work
 ```
 
 指定自定义比例：
@@ -66,6 +84,8 @@ Use $punk-cover to create prompt-only output for this X cover, style 黑白灰�
 ```
 
 ### 可用风格
+
+风格 ID 在两种语言模式下保持一致；中文/英文显示名与用途说明见 [`style-catalog.md`](./skills/punk-cover/references/style-catalog.md)。
 
 | 风格 | Style ID | 适合内容 |
 | --- | --- | --- |
