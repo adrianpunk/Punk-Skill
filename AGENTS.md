@@ -4,7 +4,7 @@
 
 本仓库用于维护可复用的 Codex Skills。当前核心技能位于 `skills/punk-cover/`。
 
-- `README.md`：说明安装方式、使用示例、支持风格和公开目录结构。
+- `README.md` / `README.en.md`：说明安装方式、使用示例、支持平台、风格和公开目录结构。
 - `skills/punk-cover/SKILL.md`：技能的主要行为规范和工作流，是最重要的修改入口。
 - `skills/punk-cover/agents/openai.yaml`：面向 Agent 的配置文件。
 - `skills/punk-cover/references/style-catalog.md`：封面风格目录。

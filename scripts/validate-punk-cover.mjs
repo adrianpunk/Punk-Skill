@@ -7,6 +7,7 @@ const root = path.resolve(scriptDir, "..");
 const skillPath = path.join(root, "skills", "punk-cover", "SKILL.md");
 const blueprintPath = path.join(root, "skills", "punk-cover", "references", "cover-prompt-blueprint.md");
 const platformCatalogPath = path.join(root, "skills", "punk-cover", "references", "platform-catalog.md");
+const englishReadmePath = path.join(root, "README.en.md");
 const stylesDir = path.join(root, "styles");
 
 const requiredStyleFields = [
@@ -39,8 +40,13 @@ if (!fs.existsSync(platformCatalogPath)) {
   fail(`Missing platform catalog: ${path.relative(root, platformCatalogPath)}`);
 }
 
+if (!fs.existsSync(englishReadmePath)) {
+  fail(`Missing English README: ${path.relative(root, englishReadmePath)}`);
+}
+
 const skill = read(skillPath);
 const platformCatalog = fs.existsSync(platformCatalogPath) ? read(platformCatalogPath) : "";
+const englishReadme = fs.existsSync(englishReadmePath) ? read(englishReadmePath) : "";
 const skillChecks = [
   {
     label: "compile that style atom into the cover shape",
@@ -93,6 +99,18 @@ const platformChecks = [
 for (const [label, phrase] of platformChecks) {
   if (!platformCatalog.includes(phrase)) {
     fail(`Platform catalog missing ${label}: ${phrase}`);
+  }
+}
+
+const readmeChecks = [
+  ["language switch link", "[中文](./README.md)"],
+  ["global platform coverage", "Instagram, Facebook, LinkedIn, YouTube, TikTok"],
+  ["ratio limitation guidance", "does not claim compliance with any platform's cover-size standard"],
+];
+
+for (const [label, phrase] of readmeChecks) {
+  if (!englishReadme.includes(phrase)) {
+    fail(`README.en.md missing ${label}: ${phrase}`);
   }
 }
 

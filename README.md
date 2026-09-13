@@ -1,5 +1,7 @@
 # Punk Skill
 
+[English](./README.en.md)
+
 Punk Skill 是一组给 AI Agent 使用的视觉生成 Skills。安装后，可以用它把文章生成封面图，或把人物、宠物、物品照片生成头像图。
 
 > [!IMPORTANT]
