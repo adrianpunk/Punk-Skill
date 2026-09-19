@@ -70,7 +70,7 @@ The style file defines the reusable visual language. The cover blueprint defines
    - Accept a style ID or either localized display name as an unambiguous style selection.
    - The language mode controls the prompt, title/subtitle treatment, labels, questions, and supporting text. It does not translate user text without permission.
    - If the user specifies one catalog style, use it.
-   - If the user supplies a complete visual direction that matches a catalog style, including the `复古时代错位编辑封面` brief, a “超大标题 × 中央视觉主体 × 图文穿插” brief, a “真实纸雕层叠 × 极简留白 × 柔和光影 × 准确隐喻” brief, a “真实纸张质感 × 击凸压凹 × 文字构图 × 克制视觉隐喻” brief, an “抽象概念 → 具体场景 → 游戏机制 → 像素视觉隐喻” brief, an “OSB 木板 × 工业蓝标识字 × 极简线条隐喻” brief, or a “黑白复古蚀刻版画 × 排线交叉排线 × 单一超现实隐喻” brief, or a “极简轻科技 × 纯白留白 × 单一渐变锚点 × 现代黑体标题” brief, treat that style as specified and use the matching `META.md` and `STYLE.md` without asking the user to repeat the style.
+   - If the user supplies a complete visual direction that matches a catalog style, including the `复古时代错位编辑封面` brief, a “复古未来主义 × 模拟基础设施 × 巨型系统流动 × 复古印刷质感” brief, a “超大标题 × 中央视觉主体 × 图文穿插” brief, a “真实纸雕层叠 × 极简留白 × 柔和光影 × 准确隐喻” brief, a “真实纸张质感 × 击凸压凹 × 文字构图 × 克制视觉隐喻” brief, an “抽象概念 → 具体场景 → 游戏机制 → 像素视觉隐喻” brief, an “OSB 木板 × 工业蓝标识字 × 极简线条隐喻” brief, or a “黑白复古蚀刻版画 × 排线交叉排线 × 单一超现实隐喻” brief, or a “极简轻科技 × 纯白留白 × 单一渐变锚点 × 现代黑体标题” brief, treat that style as specified and use the matching `META.md` and `STYLE.md` without asking the user to repeat the style.
    - If no style is specified, recommend exactly three eligible catalog styles based on the content and give a one-sentence reason for each, then ask the user to choose one or provide a custom style direction.
    - Do not show all eligible styles by default unless the user asks for the full menu.
    - Only auto-select one style when the user explicitly says to decide everything automatically, not merely because they provided an article.
@@ -133,6 +133,7 @@ End by asking the user to choose a platform and one style, or to say `auto` if t
 - Use `超大标题图文穿插` when the title should become part of the composition through a single central subject, explicit front/back typography layers, controlled occlusion, and strong editorial-poster impact across custom ratios.
 - Use business/report styles for strategy, product, AI, startup, industry, consulting, or analysis content.
 - Use `复古时代错位编辑封面` for AI, coding, digital work, future tools, or contemporary topics that benefit from a human-centered mid-century illustration and one restrained era-displacement metaphor.
+- Use `复古未来主义` for AI, automation, information overload, knowledge flow, archives, infrastructure, future cities, or system-change topics that benefit from one monumental analog process, physical information flow, and small human actions.
 - Use journal/concept styles for science, research, medicine, engineering, or mechanism-heavy content.
 - Use collage, giant-title, block, brick, or diffuse styles for social posts that need stronger shareability.
 - Use black-white minimal or avant-geometry styles for abstract, philosophical, critical, or high-contrast editorial themes.

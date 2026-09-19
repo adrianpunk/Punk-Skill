@@ -107,6 +107,7 @@ Use $punk-cover to create prompt-only output for this X cover, style 黑白灰�
 | 科研期刊概念 | `research-journal-concept` | 科研、医学、材料、生物、机制类主题 |
 | 复古弥散渐变 | `retro-diffuse-gradient` | 艺术、设计、品牌、情绪化文章和杂志封面 |
 | 复古时代错位编辑封面 | `midcentury-surreal-editorial-cover` | AI、Coding、数字工作、未来工具和需要复古时代错位隐喻的当代主题 |
+| 复古未来主义 | `retro-futurism` | 中世纪想象的未来基础设施、模拟系统、物质化信息流、小人物动作和复古印刷质感的编辑封面 |
 | 极简公共空间摄影 | `minimal-public-space-photography` | 观点长文、文化观察、空间秩序和个体隐喻 |
 | 商业杂志头版 | `business-magazine-front-page` | AI、创业、投资、趋势、商业科技封面 |
 | 黑白灰先锋几何 | `black-white-gray-avant-geometry` | 实验性、现代主义、几何构成、强对比视觉 |
@@ -136,6 +137,8 @@ Use $punk-cover to create prompt-only output for this X cover, style 黑白灰�
 | 方块世界 | 巨型透视中文标题 | 积木世界 |
 | ![超大标题图文穿插](./screenshots/punk-cover-styles/interleaved-title-editorial-poster.png) | ![立体纸雕概念海报](./screenshots/punk-cover-styles/layered-paper-cut-concept-poster.png) | ![复古时代错位编辑封面](./screenshots/punk-cover-styles/midcentury-surreal-editorial-cover.png) |
 | 超大标题图文穿插 | 立体纸雕概念海报 | 复古时代错位编辑封面 |
+| ![复古未来主义](./screenshots/punk-cover-styles/retro-futurism.png) | | |
+| 复古未来主义 | | |
 | ![纸面击凸压凹封面](./screenshots/punk-cover-styles/paper-emboss-deboss-cover.png) | ![Godot 2D 像素隐喻海报](./screenshots/punk-cover-styles/godot-2d-pixel-metaphor-poster.png) | ![OSB 工业蓝线条隐喻](./screenshots/punk-cover-styles/osb-industrial-blue-line-metaphor.png) |
 | 纸面击凸压凹封面 | Godot 2D 像素隐喻海报 | OSB 工业蓝线条隐喻 |
 | ![咨询报告视觉](./screenshots/punk-cover-styles/consulting-report-visual.jpg) | ![科研期刊概念](./screenshots/punk-cover-styles/research-journal-concept.jpg) | ![复古弥散渐变](./screenshots/punk-cover-styles/retro-diffuse-gradient.jpg) |

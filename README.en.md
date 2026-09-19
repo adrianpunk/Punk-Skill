@@ -105,6 +105,7 @@ Style IDs remain the same in both language modes. Localized names and use-case d
 | Research Journal Concept | `research-journal-concept` | Science, medicine, materials, biology, mechanisms, and lab themes |
 | Retro Diffuse Gradient | `retro-diffuse-gradient` | Art, design, music, brands, emotions, and independent magazine themes |
 | Mid-Century Surreal Editorial Cover | `midcentury-surreal-editorial-cover` | AI, coding, digital work, future tools, and restrained era-displacement metaphors |
+| Retro-Futurism Editorial Cover | `retro-futurism` | Imagined mid-century infrastructure, analog systems, physical information flow, small human actions, and aged print texture |
 | Minimal Public-Space Photography | `minimal-public-space-photography` | Opinion essays, cultural observation, spatial order, and individual-space metaphors |
 | Business Magazine Front Page | `business-magazine-front-page` | Business, technology, AI, startups, investment, and trend analysis |
 | Black-and-White-and-Gray Avant-Garde Geometry | `black-white-gray-avant-geometry` | Experimental, modernist, geometric, and high-contrast themes |
@@ -134,6 +135,8 @@ Style IDs remain the same in both language modes. Localized names and use-case d
 | Block World | Giant Perspective Chinese Title | Brick World |
 | ![Interleaved Oversized Title Editorial Poster](./screenshots/punk-cover-styles/interleaved-title-editorial-poster.png) | ![Layered Paper-Cut Concept Poster](./screenshots/punk-cover-styles/layered-paper-cut-concept-poster.png) | ![Mid-Century Surreal Editorial Cover](./screenshots/punk-cover-styles/midcentury-surreal-editorial-cover.png) |
 | Interleaved Oversized Title Editorial Poster | Layered Paper-Cut Concept Poster | Mid-Century Surreal Editorial Cover |
+| ![Retro-Futurism Editorial Cover](./screenshots/punk-cover-styles/retro-futurism.png) | | |
+| Retro-Futurism Editorial Cover | | |
 | ![Embossed/Debossed Paper Cover](./screenshots/punk-cover-styles/paper-emboss-deboss-cover.png) | ![Godot 2D Pixel Metaphor Poster](./screenshots/punk-cover-styles/godot-2d-pixel-metaphor-poster.png) | ![OSB Industrial Blue Line Metaphor](./screenshots/punk-cover-styles/osb-industrial-blue-line-metaphor.png) |
 | Embossed/Debossed Paper Cover | Godot 2D Pixel Metaphor Poster | OSB Industrial Blue Line Metaphor |
 | ![Consulting Report Visual](./screenshots/punk-cover-styles/consulting-report-visual.jpg) | ![Research Journal Concept](./screenshots/punk-cover-styles/research-journal-concept.jpg) | ![Retro Diffuse Gradient](./screenshots/punk-cover-styles/retro-diffuse-gradient.jpg) |

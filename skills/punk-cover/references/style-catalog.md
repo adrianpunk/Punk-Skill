@@ -28,6 +28,7 @@ style atom.
 | 科研期刊概念 | `research-journal-concept` | `styles/research-journal-concept/META.md` | `styles/research-journal-concept/STYLE.md` | Science, research, medicine, materials, mechanisms, academic or lab-themed covers. |
 | 复古弥散渐变 | `retro-diffuse-gradient` | `styles/retro-diffuse-gradient/META.md` | `styles/retro-diffuse-gradient/STYLE.md` | Art, design, music, brand, emotion, atmospheric essays, independent magazine-style covers. |
 | 复古时代错位编辑封面 | `midcentury-surreal-editorial-cover` | `styles/midcentury-surreal-editorial-cover/META.md` | `styles/midcentury-surreal-editorial-cover/STYLE.md` | AI, coding, digital work, future tools, and contemporary topics needing mid-century commercial illustration, one human action, and a restrained surreal era mismatch. |
+| 复古未来主义 | `retro-futurism` | `styles/retro-futurism/META.md` | `styles/retro-futurism/STYLE.md` | Retro-futurist editorial covers built from imagined mid-century infrastructure, analog systems, physical information flow, small human actions, and aged print texture. |
 | 极简公共空间摄影 | `minimal-public-space-photography` | `styles/minimal-public-space-photography/META.md` | `styles/minimal-public-space-photography/STYLE.md` | Opinion essays, long-form articles, cultural observation, spatial order, individual-space metaphors, and restrained editorial photography covers. |
 | 商业杂志头版 | `business-magazine-front-page` | `styles/business-magazine-front-page/META.md` | `styles/business-magazine-front-page/STYLE.md` | Business, technology, AI, startups, investment, trend analysis, sharp magazine-like editorial covers. |
 | 黑白灰先锋几何 | `black-white-gray-avant-geometry` | `styles/black-white-gray-avant-geometry/META.md` | `styles/black-white-gray-avant-geometry/STYLE.md` | Experimental, stark, geometric, modernist, poster-like covers with restrained color. |
@@ -65,6 +66,7 @@ style atom.
 | `research-journal-concept` | Research Journal Concept | 科研、医学、材料、生物、机制和实验室主题。 |
 | `retro-diffuse-gradient` | Retro Diffuse Gradient | 艺术、设计、音乐、品牌、情绪和独立杂志主题。 |
 | `midcentury-surreal-editorial-cover` | Mid-Century Surreal Editorial Cover | AI、编码、数字工作、未来工具和时代错位隐喻。 |
+| `retro-futurism` | Retro-Futurism Editorial Cover | 中世纪想象的未来基础设施、模拟系统、物质化信息流、小人物动作和复古印刷质感。 |
 | `minimal-public-space-photography` | Minimal Public-Space Photography | 观点长文、文化观察、空间秩序和个体空间隐喻。 |
 | `business-magazine-front-page` | Business Magazine Front Page | 商业、科技、AI、创业、投资和趋势分析。 |
 | `black-white-gray-avant-geometry` | Black-and-White-and-Gray Avant-Garde Geometry | 实验性、现代主义、几何构成和强对比主题。 |
@@ -107,6 +109,7 @@ These reusable style atoms exist in `styles/`, but are not part of the default `
 - For workplace, organization, efficiency, tools, relationships, paths, knots, interruptions, or reconnection themes needing tactile material contrast and one sparse line metaphor, prefer `OSB 工业蓝线条隐喻`.
 - For video covers, technology explainers, AI tools, systems, code, psychology, or high-conflict social themes needing anime keyframe energy, prefer `复古日本科幻动画`.
 - For AI, coding, digital work, future tools, or contemporary topics that need a human-centered retro metaphor, prefer `复古时代错位编辑封面`.
+- For AI, automation, information overload, knowledge flow, archives, infrastructure, future cities, or system-change topics that can become one monumental analog process with small human actions, prefer `复古未来主义`.
 - For tutorials, product launches, workflow automation, tool integrations, brand collaborations, or two-logo partnership covers, prefer `品牌协同连接`.
 - For research-heavy material, prefer `科研期刊概念`.
 - For AI research, knowledge systems, design research, or quiet report-like editorial covers, prefer `Anthropic Research 风格`.
