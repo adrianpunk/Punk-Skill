@@ -20,6 +20,7 @@ Then invoke them like this:
 ```text
 Use $punk-cover ...
 Use $punk-avatar ...
+Use $punk-ip-video-cover ...
 ```
 
 ## Available Skills
@@ -28,6 +29,7 @@ Use $punk-avatar ...
 | --- | --- |
 | `punk-cover` | Create covers for Xiaohongshu, WeChat public accounts, X, and global social platforms. |
 | `punk-avatar` | Create avatars for people, pets, and objects, plus pet keepsake cards and surreal paper-art portraits. |
+| `punk-ip-video-cover` | Extract four colors from a portrait, cut out the real person, and compose personal-brand video covers. |
 
 ## punk-cover
 
@@ -153,6 +155,32 @@ Style IDs remain the same in both language modes. Localized names and use-case d
 | Anthropic Research Style | Kimi Style | Minimal Visual Metaphor |
 | ![Minimal Light Tech](./screenshots/punk-cover-styles/minimal-light-tech.png) | | |
 | Minimal Light Tech | | |
+
+## punk-ip-video-cover
+
+`punk-ip-video-cover` creates personal-brand video covers from an uploaded portrait and a topic or exact title. Its core workflow is **extract four representative colors → assign coordinated color roles → cut out the real person → compose a fresh layout → apply typography, materials, and decorations**. Preserve recognizable identity while allowing topic-appropriate pose and expression changes.
+
+Supported ratios are `3:4`, `16:9`, `4:3`, and `9:16`; the default is `3:4`. Position, crop, title path, and color roles are chosen for each request. Layout examples are optional building blocks, not fixed templates. The style library contains text rules rather than collected covers or test portraits.
+
+Attach a portrait and request automatic styling:
+
+```text
+Use $punk-ip-video-cover to create a 3:4 cover from this portrait.
+Exact title: 普通人如何用 AI 做内容.
+You may change the pose and expression to suit the topic.
+```
+
+Request layout variants within one style:
+
+```text
+Use $punk-ip-video-cover with wardrobe-paper-collage.
+Exact title: 把生活过成假期. Create three independent 3:4 versions.
+Use the same four colors extracted from my portrait, with different layouts.
+```
+
+The library includes 25 typography and material directions, including doodles, brush lettering, serif type, comics, collage, and Y2K. See the [style catalog](./skills/punk-ip-video-cover/references/style-catalog.md) and [photo-palette workflow](./skills/punk-ip-video-cover/references/photo-palette.md). Library inclusion does not mean every style, ratio, or input has passed generation testing.
+
+Install `skills/punk-ip-video-cover/` as a self-contained skill; its style library and references live inside that directory.
 
 ## punk-avatar
 

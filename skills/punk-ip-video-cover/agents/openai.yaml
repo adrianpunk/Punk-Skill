@@ -1,0 +1,4 @@
+interface:
+  display_name: "IP 视频封面"
+  short_description: "从照片提取四色并搭配，抠出真人自由构图，提供 25 种字体材质风格及四比例封面"
+  default_prompt: "使用 $punk-ip-video-cover，从我的照片提取四个颜色并合理搭配，抠出真人，按主题自由构图并选择字体材质风格；动作表情可以修改，只呈现本期人物与标题。"

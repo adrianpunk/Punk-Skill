@@ -20,6 +20,7 @@ Punk Skill 是一组给 AI Agent 使用的视觉生成 Skills。安装后，可�
 ```text
 Use $punk-cover ...
 Use $punk-avatar ...
+Use $punk-ip-video-cover ...
 ```
 
 ## 可用 Skills
@@ -28,6 +29,7 @@ Use $punk-avatar ...
 | --- | --- |
 | `punk-cover` | 生成小红书、微信公众号、X / Twitter 等平台的封面图 |
 | `punk-avatar` | 生成人物头像、宠物头像、物品头像、宠物纪念卡和超现实人物纸艺图 |
+| `punk-ip-video-cover` | 从人物照片提取四色、抠出真人并自由构图，生成个人 IP 视频封面 |
 
 ## punk-cover
 
@@ -155,6 +157,31 @@ Use $punk-cover to create prompt-only output for this X cover, style 黑白灰�
 | Anthropic Research 风格 | kimi风格 | 极简视觉隐喻风 |
 | ![极简轻科技](./screenshots/punk-cover-styles/minimal-light-tech.png) | | |
 | 极简轻科技 | | |
+
+## punk-ip-video-cover
+
+`punk-ip-video-cover` 用上传的人物照片和主题制作小红书人物 IP 视频封面。核心流程是：**提取四个代表色并合理搭配 → 真人抠图 → 按本期标题和画幅自由构图 → 应用字体、材质与装饰风格**。保留可辨认身份，动作与表情可按主题修改。
+
+支持 `3:4`、`16:9`、`4:3`、`9:16`，默认 `3:4`。人物位置、景别、标题路径及配色角色每次重新决定；构图库只作参考，风格不绑定固定布局。仅需本期身份照片，独立风格库以文字规则执行，不携带研究参考封面或测试人物照片。
+
+附上照片后自动选风格：
+
+```text
+使用 $punk-ip-video-cover，用这张人物照片制作 3:4 封面。
+标题：普通人如何用 AI 做内容。动作和表情可以按主题修改。
+```
+
+指定风格并制作多个排版版本：
+
+```text
+使用 $punk-ip-video-cover，采用「服装取色·真人撕纸拼贴」，
+标题：把生活过成假期。用附上的真人照片出三个 3:4 版本，
+从照片提取同一组四个颜色，每版采用不同构图。
+```
+
+目前接入 25 种风格，包含涂鸦、笔刷、衬线、漫画、拼贴、Y2K 等字形和材料方向。完整名称及规则见 [风格目录](./skills/punk-ip-video-cover/references/style-catalog.md)，配色流程见 [照片四色](./skills/punk-ip-video-cover/references/photo-palette.md)。接入数量不代表所有风格、比例和输入都已通过出图验证；实际生成需检查身份、中文、比例和布局。
+
+安装时选择 `skills/punk-ip-video-cover/` 即可；其 `styles/` 与 `references/` 均包含在自身目录内。
 
 ## punk-avatar
 
